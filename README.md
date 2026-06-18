@@ -12,10 +12,11 @@ folder via GitHub Pages and lives at **rbapp.ru**. Each app has its own subfolde
 | # | App | Path | Privacy URL |
 |---|-----|------|-------------|
 | RB-01 | Recapio | [`docs/recapio/`](docs/recapio/) | rbapp.ru/recapio/privacy.html |
-| RB-02 | OBD Connector | [`docs/obd/`](docs/obd/) | rbapp.ru/obd/privacy.html |
-| RB-03 | Traffic & DMV | [`docs/traffic-dmv/`](docs/traffic-dmv/) | rbapp.ru/traffic-dmv/privacy.html |
-| RB-04 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbapp.ru/bussgeldkatalog/privacy.html |
-| RB-05 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbapp.ru/pamyatka-gibdd/privacy.html |
+| RB-02 | Car Parts | [`docs/carparts/`](docs/carparts/) | rbapp.ru/carparts/privacy.html |
+| RB-03 | OBD Connector | [`docs/obd/`](docs/obd/) | rbapp.ru/obd/privacy.html |
+| RB-04 | Traffic & DMV | [`docs/traffic-dmv/`](docs/traffic-dmv/) | rbapp.ru/traffic-dmv/privacy.html |
+| RB-05 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbapp.ru/bussgeldkatalog/privacy.html |
+| RB-06 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbapp.ru/pamyatka-gibdd/privacy.html |
 
 > When the old per-app repos are removed, update each app's **App Store privacy-policy URL**
 > to the matching `rbapp.ru/<app>/privacy.html` above.
