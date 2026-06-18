@@ -199,7 +199,67 @@
   /* ===== a11y ===== */
   :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+  /* ============ FAQ ============ */
+  .rb-faq{padding:72px 0 8px;border-top:1px solid var(--line)}
+  .rb-faq-inner{max-width:760px;margin:0 auto;padding:0 24px}
+  .rb-faq-eyebrow{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-faq h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.4vw,40px);letter-spacing:-.03em;line-height:1.05;margin:0 0 28px}
+  .rb-faq details{border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:12px;overflow:hidden}
+  .rb-faq summary{list-style:none;cursor:pointer;padding:19px 22px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .rb-faq summary::-webkit-details-marker{display:none}
+  .rb-faq summary::after{content:"+";font-family:"Space Mono",monospace;color:var(--accent);font-size:22px;line-height:1;flex:0 0 auto}
+  .rb-faq details[open] summary::after{content:"\2212"}
+  .rb-faq .rb-faq-a{padding:0 22px 20px;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Recapio work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After a speech model is downloaded once, transcription runs entirely on your iPhone or iPad — no connection is needed and nothing is uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it transcribe both audio and video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Import audio or video from Files or Photos, or share it into Recapio, and it extracts and transcribes the speech."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it tell speakers apart and summarize?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Recapio can label different speakers and also generate AI summaries, translations and subtitles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Recapio is a one-time purchase, with no ads and no in-app subscriptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your recordings and transcripts stay on your device. There are no accounts, no analytics and no servers."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -291,6 +351,34 @@
   </section>
 
 </main>
+
+
+<section class="rb-faq">
+  <div class="rb-faq-inner">
+    <span class="rb-faq-eyebrow">FAQ</span>
+    <h2>Frequently asked questions</h2>
+        <details>
+          <summary>Does Recapio work offline?</summary>
+          <div class="rb-faq-a">Yes. After a speech model is downloaded once, transcription runs entirely on your iPhone or iPad — no connection is needed and nothing is uploaded.</div>
+        </details>
+        <details>
+          <summary>Can it transcribe both audio and video?</summary>
+          <div class="rb-faq-a">Yes. Import audio or video from Files or Photos, or share it into Recapio, and it extracts and transcribes the speech.</div>
+        </details>
+        <details>
+          <summary>Can it tell speakers apart and summarize?</summary>
+          <div class="rb-faq-a">Yes — Recapio can label different speakers and also generate AI summaries, translations and subtitles.</div>
+        </details>
+        <details>
+          <summary>Is there a subscription?</summary>
+          <div class="rb-faq-a">No. Recapio is a one-time purchase, with no ads and no in-app subscriptions.</div>
+        </details>
+        <details>
+          <summary>Is my data private?</summary>
+          <div class="rb-faq-a">Your recordings and transcripts stay on your device. There are no accounts, no analytics and no servers.</div>
+        </details>
+  </div>
+</section>
 
 <footer class="rb-foot">
   <div class="rb-wrap rb-foot-row">

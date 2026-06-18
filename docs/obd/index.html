@@ -206,7 +206,67 @@
   .rb-appstore-txt{display:flex;flex-direction:column;line-height:1.04;text-align:left}
   .rb-appstore-txt small{font-family:"Hanken Grotesk",sans-serif;font-size:11px;font-weight:500;letter-spacing:.2px;opacity:.88;text-transform:none}
   .rb-appstore-txt b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;font-weight:700;letter-spacing:-.01em}
+
+  /* ============ FAQ ============ */
+  .rb-faq{padding:72px 0 8px;border-top:1px solid var(--line)}
+  .rb-faq-inner{max-width:760px;margin:0 auto;padding:0 24px}
+  .rb-faq-eyebrow{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-faq h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.4vw,40px);letter-spacing:-.03em;line-height:1.05;margin:0 0 28px}
+  .rb-faq details{border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:12px;overflow:hidden}
+  .rb-faq summary{list-style:none;cursor:pointer;padding:19px 22px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .rb-faq summary::-webkit-details-marker{display:none}
+  .rb-faq summary::after{content:"+";font-family:"Space Mono",monospace;color:var(--accent);font-size:22px;line-height:1;flex:0 0 auto}
+  .rb-faq details[open] summary::after{content:"\2212"}
+  .rb-faq .rb-faq-a{padding:0 22px 20px;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which adapter do I need for OBD Connector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any ELM327-compatible OBD-II adapter over Bluetooth LE or Wi-Fi (for example Vgate, Veepeak or OBDLink). Just plug it into your car's OBD-II port."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I read and clear check-engine fault codes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Read confirmed, pending and permanent DTCs with full descriptions, then clear them with explicit confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try it without a car or adapter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Demo Mode uses realistic synthetic data so you can explore the whole app before buying an adapter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it need an account or internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account and no subscription. OBD Connector runs on-device; your VIN and diagnostic history stay on your phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can the live dashboard show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real-time RPM, speed, coolant, throttle, fuel and 55+ parameters, plus a full trip recorder with GPS route and acceleration tests."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -303,6 +363,34 @@
   </section>
 
 </main>
+
+
+<section class="rb-faq">
+  <div class="rb-faq-inner">
+    <span class="rb-faq-eyebrow">FAQ</span>
+    <h2>Frequently asked questions</h2>
+        <details>
+          <summary>Which adapter do I need for OBD Connector?</summary>
+          <div class="rb-faq-a">Any ELM327-compatible OBD-II adapter over Bluetooth LE or Wi-Fi (for example Vgate, Veepeak or OBDLink). Just plug it into your car&#x27;s OBD-II port.</div>
+        </details>
+        <details>
+          <summary>Can I read and clear check-engine fault codes?</summary>
+          <div class="rb-faq-a">Yes. Read confirmed, pending and permanent DTCs with full descriptions, then clear them with explicit confirmation.</div>
+        </details>
+        <details>
+          <summary>Can I try it without a car or adapter?</summary>
+          <div class="rb-faq-a">Yes — Demo Mode uses realistic synthetic data so you can explore the whole app before buying an adapter.</div>
+        </details>
+        <details>
+          <summary>Does it need an account or internet?</summary>
+          <div class="rb-faq-a">No account and no subscription. OBD Connector runs on-device; your VIN and diagnostic history stay on your phone.</div>
+        </details>
+        <details>
+          <summary>What can the live dashboard show?</summary>
+          <div class="rb-faq-a">Real-time RPM, speed, coolant, throttle, fuel and 55+ parameters, plus a full trip recorder with GPS route and acceleration tests.</div>
+        </details>
+  </div>
+</section>
 
 <footer class="rb-foot">
   <div class="rb-wrap rb-foot-row">

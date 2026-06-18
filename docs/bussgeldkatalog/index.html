@@ -223,7 +223,67 @@
   /* ============ a11y ============ */
   :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+  /* ============ FAQ ============ */
+  .rb-faq{padding:72px 0 8px;border-top:1px solid var(--line)}
+  .rb-faq-inner{max-width:760px;margin:0 auto;padding:0 24px}
+  .rb-faq-eyebrow{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-faq h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.4vw,40px);letter-spacing:-.03em;line-height:1.05;margin:0 0 28px}
+  .rb-faq details{border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:12px;overflow:hidden}
+  .rb-faq summary{list-style:none;cursor:pointer;padding:19px 22px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .rb-faq summary::-webkit-details-marker{display:none}
+  .rb-faq summary::after{content:"+";font-family:"Space Mono",monospace;color:var(--accent);font-size:22px;line-height:1;flex:0 0 auto}
+  .rb-faq details[open] summary::after{content:"\2212"}
+  .rb-faq .rb-faq-a{padding:0 22px 20px;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Funktioniert die App offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Alle Daten sind in der App — Bußgeldkatalog, StVO, Verkehrszeichen und Punkte funktionieren komplett offline, ganz ohne Konto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie finde ich Bußgeld und Punkte für einen Verstoß?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wähle den Verstoß (z. B. Geschwindigkeit, Handy oder Abstand) und die App zeigt Bußgeld, Punkte in Flensburg und ein mögliches Fahrverbot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind die Promillegrenzen enthalten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — 0,0 / 0,5 / 1,1 ‰ sowie der THC-Grenzwert und die jeweiligen Folgen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Enthält die App den StVO-Volltext?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, alle Paragrafen §1 bis §53 mit Suche, dazu über 130 Verkehrszeichen mit Bildern und Erklärungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werden personenbezogene Daten gesammelt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Es gibt keine Erfassung personenbezogener Daten, kein Konto und kein Tracking."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -359,6 +419,34 @@
   </section>
 
 </main>
+
+
+<section class="rb-faq">
+  <div class="rb-faq-inner">
+    <span class="rb-faq-eyebrow">FAQ</span>
+    <h2>Häufige Fragen</h2>
+        <details>
+          <summary>Funktioniert die App offline?</summary>
+          <div class="rb-faq-a">Ja. Alle Daten sind in der App — Bußgeldkatalog, StVO, Verkehrszeichen und Punkte funktionieren komplett offline, ganz ohne Konto.</div>
+        </details>
+        <details>
+          <summary>Wie finde ich Bußgeld und Punkte für einen Verstoß?</summary>
+          <div class="rb-faq-a">Wähle den Verstoß (z. B. Geschwindigkeit, Handy oder Abstand) und die App zeigt Bußgeld, Punkte in Flensburg und ein mögliches Fahrverbot.</div>
+        </details>
+        <details>
+          <summary>Sind die Promillegrenzen enthalten?</summary>
+          <div class="rb-faq-a">Ja — 0,0 / 0,5 / 1,1 ‰ sowie der THC-Grenzwert und die jeweiligen Folgen.</div>
+        </details>
+        <details>
+          <summary>Enthält die App den StVO-Volltext?</summary>
+          <div class="rb-faq-a">Ja, alle Paragrafen §1 bis §53 mit Suche, dazu über 130 Verkehrszeichen mit Bildern und Erklärungen.</div>
+        </details>
+        <details>
+          <summary>Werden personenbezogene Daten gesammelt?</summary>
+          <div class="rb-faq-a">Nein. Es gibt keine Erfassung personenbezogener Daten, kein Konto und kein Tracking.</div>
+        </details>
+  </div>
+</section>
 
 <footer class="rb-foot">
   <div class="rb-wrap rb-foot-row">
