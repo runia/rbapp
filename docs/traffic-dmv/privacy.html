@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — Traffic &amp; DMV</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="theme-color" content="#14201B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA;
+    --paper-2:#E4E7E1;
+    --card:#F7F8F5;
+    --ink:#14201B;
+    --ink-soft:#2C342E;
+    --graphite:#586059;
+    --line:#D3D8CF;
+    --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#1E874B;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    background-position:-1px -1px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%);
+  }
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  /* ============ Header ============ */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Reading column ============ */
+  .doc{max-width:760px;margin:0 auto;padding:54px 24px 40px}
+  @media(max-width:560px){.doc{padding:40px 20px 32px}}
+  .top{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .top img{width:54px;height:54px;border-radius:13px;box-shadow:0 8px 20px rgba(20,32,27,.16);background:#fff}
+  .top .name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em}
+  .top .sub{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--graphite);margin-top:3px}
+
+  .back-app{display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;
+    font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .back-app:hover{border-color:var(--ink);color:var(--ink)}
+
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(32px,5vw,46px);letter-spacing:-.03em;line-height:1.04;margin-bottom:20px}
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin:30px 0 8px;
+    display:flex;align-items:baseline;gap:10px}
+  h2::before{content:"";flex:0 0 auto;width:14px;height:2px;background:var(--accent);transform:translateY(-5px);border-radius:2px}
+  p{font-size:16px;margin-bottom:12px;color:var(--ink-soft)}
+  ul{margin:0 0 12px 22px;font-size:16px;color:var(--ink-soft)}
+  a.link,.doc p a{color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:8px}
+  .card p{margin-bottom:0}
+
+  table{width:100%;border-collapse:collapse;margin:8px 0 16px}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;font-size:15px}
+  thead th{background:var(--card);font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--graphite)}
+
+  .back{display:inline-block;margin-top:30px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+  footer.doc-foot{color:var(--graphite);font-size:13px;margin-top:26px;border-top:1px solid var(--line);padding-top:20px;font-family:"Space Mono",monospace;letter-spacing:.4px}
+
+  /* ============ Footer ============ */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:24px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">TRAFFIC &amp; DMV</span></span>
+    </a>
+    <a class="rb-back" href="../">← All apps</a>
+  </div>
+</header>
+
+<div class="doc">
+
+  <a class="back-app" href="index.html">← Back to the app</a>
+
+  <div class="top">
+    <img src="icon.png" alt="Traffic &amp; DMV app icon">
+    <div>
+      <div class="name">Traffic &amp; DMV</div>
+      <div class="sub">Privacy Policy</div>
+    </div>
+  </div>
+
+  <h1>Privacy Policy</h1>
+
+  <div class="card">
+    <p><strong>Summary:</strong> Traffic &amp; DMV does not collect, store, or share any personal information. The app works fully offline, requires no account, contains no ads, and uses no tracking or analytics.</p>
+  </div>
+
+  <h2>Information we collect</h2>
+  <p>None. We do not ask for your name, email, phone number, location, contacts, or any other personal data. We do not create accounts and do not require sign-in.</p>
+
+  <h2>Data stored on your device</h2>
+  <p>Your selected state, chosen appearance (light/dark), and your in-app favorites are saved only on your device, in the app's local settings. This information never leaves your device and is removed if you delete the app.</p>
+
+  <h2>Analytics &amp; tracking</h2>
+  <p>The app contains no third-party analytics, advertising, or tracking SDKs. We do not use cookies or device identifiers.</p>
+
+  <h2>Network use</h2>
+  <p>The app's content is bundled and works offline. The only network requests occur if you tap an optional "official source" link, which opens that website in your browser. Those websites have their own privacy policies, which we do not control.</p>
+
+  <h2>Children's privacy</h2>
+  <p>The app does not collect personal information from anyone, including children.</p>
+
+  <h2>Disclaimer</h2>
+  <p>Traffic &amp; DMV is an independent educational reference. It is not affiliated with any government agency, DMV, DOT, or court, and it does not provide legal advice.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted on this page.</p>
+
+  <a class="back" href="index.html">← Back to Traffic &amp; DMV</a>
+  <footer class="doc-foot">© 2026 Traffic &amp; DMV</footer>
+</div>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Privacy policy</a> · <a href="../">All apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Contact</a><br>
+      © 2026 RBApp · offline-first
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

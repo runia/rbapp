@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Traffic & DMV — US Traffic Laws, Road Signs & DMV Practice</title>
+<meta name="description" content="Offline guide to U.S. traffic laws, road signs (MUTCD), violations, fines, DUI rules and a DMV practice test — organized by state. Works offline, no account.">
+<meta name="theme-color" content="#14201B">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA;
+    --paper-2:#E4E7E1;
+    --card:#F7F8F5;
+    --ink:#14201B;
+    --ink-soft:#2C342E;
+    --graphite:#586059;
+    --line:#D3D8CF;
+    --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#1E874B;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    background-position:-1px -1px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%);
+  }
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  /* ============ Header ============ */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Hero ============ */
+  .hero{padding:72px 0 56px;position:relative}
+  .hero-icon{width:104px;height:104px;border-radius:22px;display:block;margin-bottom:28px;
+    box-shadow:0 12px 30px rgba(20,32,27,.16);background:#fff}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--graphite);margin-bottom:22px;
+  }
+  .eyebrow .tick{width:26px;height:1px;background:var(--line-strong)}
+  .hero h1{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.03em;
+    max-width:16ch;
+  }
+  .hero h1 .em{font-style:normal;position:relative;white-space:nowrap}
+  .hero h1 .em::after{
+    content:"";position:absolute;left:0;right:0;bottom:.04em;height:.10em;
+    background:var(--accent);border-radius:2px;
+  }
+  .hero .tag{
+    font-family:"Hanken Grotesk",sans-serif;font-size:clamp(17px,2vw,20px);color:var(--ink-soft);
+    max-width:52ch;margin:26px 0 0;font-weight:450;
+  }
+  .hero .sub{font-size:16px;color:var(--graphite);max-width:56ch;margin:14px 0 0}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .badge{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;
+    background:var(--card);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;color:var(--ink-soft)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;
+    padding:15px 26px;border-radius:100px;border:1px solid transparent;
+    transition:transform .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease)}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(20,32,27,.22)}
+
+  /* ============ Stats band ============ */
+  .marquee-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+  .rb-stats-inner{padding:0}
+  .rb-stats{display:grid;grid-template-columns:repeat(4,1fr)}
+  .rb-stat{padding:30px 22px;border-right:1px solid var(--line)}
+  .rb-stat:last-child{border-right:0}
+  .rb-stat .num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);letter-spacing:-.03em;line-height:1;color:var(--accent)}
+  .rb-stat .lbl{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--graphite);margin-top:8px}
+  @media(max-width:680px){.rb-stats{grid-template-columns:repeat(2,1fr)}.rb-stat:nth-child(2){border-right:0}.rb-stat:nth-child(1),.rb-stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ============ Section scaffolding ============ */
+  .rb-section{padding:72px 0}
+  .rb-eyebrow{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);
+    letter-spacing:-.03em;line-height:1.04;margin-bottom:14px}
+  .rb-sub{color:var(--graphite);font-size:16px;max-width:60ch;margin-bottom:40px}
+
+  /* ============ Cards ============ */
+  .rb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.rb-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.rb-grid{grid-template-columns:1fr}}
+  .rb-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+  .rb-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,32,27,.10);border-color:var(--line-strong)}
+  .rb-card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17.5px;letter-spacing:-.01em;margin-bottom:7px}
+  .rb-card p{font-size:14.5px;color:var(--graphite)}
+  .rb-card .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;
+    background:color-mix(in srgb,var(--accent) 12%,#fff)}
+
+  /* ============ States band ============ */
+  .alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .states{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 0}
+  .pill{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;
+    background:var(--card);border:1px solid var(--line-strong);border-radius:100px;padding:9px 18px;color:var(--ink-soft);font-weight:700}
+  .pill.on{background:var(--accent);color:#fff;border-color:transparent}
+  .note{max-width:760px;margin:34px 0 0;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;color:var(--graphite);font-size:14.5px;line-height:1.6}
+  .note strong{color:var(--ink-soft)}
+
+  /* ============ Footer ============ */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:40px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot .rb-mark{box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  .rb-contact{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--ink);
+    border:1px solid var(--line-strong);border-radius:100px;padding:11px 20px;transition:.18s}
+  .rb-contact:hover{border-color:var(--ink)}
+  .rb-disclaimer{max-width:760px;margin:22px auto 0;font-size:12.5px;color:var(--graphite);opacity:.85;line-height:1.55}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">TRAFFIC &amp; DMV</span></span>
+    </a>
+    <a class="rb-back" href="../">← All apps</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="rb-wrap">
+      <img class="hero-icon" src="icon.png" alt="Traffic & DMV app icon" width="104" height="104">
+      <span class="eyebrow"><span class="tick"></span> TRAFFIC LAW · US</span>
+      <h1>Traffic &amp; <span class="em">DMV</span></h1>
+      <p class="tag">U.S. traffic laws, road signs and DMV practice — organized by your state.</p>
+      <p class="sub">Violations, fines, points, DUI rules, MUTCD road signs and a practice test. Works fully offline. No account, no tracking.</p>
+      <div class="badges">
+        <span class="badge">Offline</span>
+        <span class="badge">By state</span>
+        <span class="badge">MUTCD road signs</span>
+        <span class="badge">DMV practice test</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6781780068">⬇︎ Download on the App Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="marquee-band">
+    <div class="rb-wrap rb-stats-inner">
+      <div class="rb-stats">
+        <div class="rb-stat"><div class="num">50</div><div class="lbl">states covered</div></div>
+        <div class="rb-stat"><div class="num">MUTCD</div><div class="lbl">road signs</div></div>
+        <div class="rb-stat"><div class="num">100%</div><div class="lbl">works offline</div></div>
+        <div class="rb-stat"><div class="num">0</div><div class="lbl">accounts required</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <span class="rb-eyebrow">Features</span>
+      <h2 class="rb-title">Everything you need for the road and the DMV</h2>
+      <p class="rb-sub">A clean, fast reference you can trust — drawn from official sources, with links.</p>
+      <div class="rb-grid">
+        <div class="rb-card"><div class="ic">🛑</div><h3>Road signs (MUTCD)</h3><p>Regulatory, warning, school, guide and work-zone signs with plain-English meanings, search and full-screen zoom.</p></div>
+        <div class="rb-card"><div class="ic">📝</div><h3>DMV practice test</h3><p>Questions based on official state driver handbooks, with instant explanations and scoring.</p></div>
+        <div class="rb-card"><div class="ic">⚠️</div><h3>Violations &amp; fines</h3><p>Common violations with the fine, license points, penalty and exact code section.</p></div>
+        <div class="rb-card"><div class="ic">🚔</div><h3>Serious offenses</h3><p>DUI/DWI, reckless driving, hit-and-run, suspended license — summaries and penalties.</p></div>
+        <div class="rb-card"><div class="ic">📖</div><h3>Laws &amp; reference</h3><p>Speed limits, BAC, points, CDL classes, documents, child safety and rules of the road.</p></div>
+        <div class="rb-card"><div class="ic">🧰</div><h3>Tools</h3><p>Global search, favorites, checklists, a citation explainer and a narrative builder.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATES -->
+  <div class="alt">
+    <section class="rb-section">
+      <div class="rb-wrap">
+        <span class="rb-eyebrow">Coverage</span>
+        <h2 class="rb-title">Pick your state</h2>
+        <p class="rb-sub">Violations, fines, points, speed limits, DUI rules and license classes are tailored to your state. Verified data ships for all 50 states — each with its own DMV practice test.</p>
+        <div class="states">
+          <span class="pill on">All 50 states</span>
+        </div>
+        <div class="note">
+          Traffic & DMV is an independent educational reference. It is <strong>not</strong> affiliated with any government agency, DMV, DOT or court, and it does not provide legal advice. Traffic laws, fines and penalties change and vary by state and county — always verify with your state DMV and the current official code.
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a class="rb-contact" href="mailto:rb.app.ios@gmail.com?subject=Traffic%20%26%20DMV%20%E2%80%94%20Contact">Contact us</a><br><br>
+      <a href="privacy.html">Privacy policy</a> · <a href="../">All apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Contact</a><br>
+      © 2026 RBApp · offline-first
+    </div>
+  </div>
+  <div class="rb-wrap">
+    <p class="rb-disclaimer">© 2026 Traffic & DMV. Road-sign images are public domain (FHWA MUTCD via Wikimedia Commons).</p>
+  </div>
+</footer>
+
+</body>
+</html>

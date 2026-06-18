@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datenschutzerklärung – Bußgeldkatalog</title>
+<meta name="description" content="Datenschutzerklärung der App Bußgeldkatalog – Verkehrsrecht Deutschland. Die App arbeitet vollständig offline und erfasst keine personenbezogenen Daten.">
+<meta name="theme-color" content="#14201B">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#D7322B;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+
+  /* ============ Header ============ */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Privacy hero ============ */
+  .pv-hero{padding:56px 0 10px}
+  .pv-col{max-width:760px;margin:0 auto}
+  .pv-back{display:inline-flex;align-items:center;gap:8px;font-family:"Space Mono",monospace;font-size:12px;
+    letter-spacing:.6px;text-transform:uppercase;color:var(--graphite);
+    border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s;margin-bottom:24px}
+  .pv-back:hover{border-color:var(--ink);color:var(--ink)}
+  .pv-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .pv-eyebrow img{width:54px;height:54px;border-radius:14px;box-shadow:0 10px 24px rgba(20,32,27,.14);background:#fff}
+  .pv-eyebrow .meta{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--graphite);line-height:1.5}
+  .pv-hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(32px,5.5vw,52px);
+    letter-spacing:-.03em;line-height:1.02}
+
+  /* ============ Reading column ============ */
+  main{padding:24px 0 10px}
+  .pv-body{max-width:760px;margin:0 auto;font-size:16px}
+  .pv-body h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(20px,3vw,26px);
+    letter-spacing:-.02em;line-height:1.15;margin:42px 0 14px;padding-left:16px;position:relative}
+  .pv-body h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:4px;border-radius:2px;background:var(--accent)}
+  .pv-body h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;margin:22px 0 8px}
+  .pv-body p{margin-bottom:14px;color:var(--ink-soft)}
+  .pv-body ul{margin:0 0 14px 22px;color:var(--ink-soft)}
+  .pv-body li{margin-bottom:8px}
+  .pv-body .lead{font-size:17px;color:var(--ink-soft)}
+  .pv-body a{color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+  .pv-body a:hover{border-bottom-color:var(--accent)}
+  .pv-body strong{color:var(--ink)}
+  .pv-highlight{background:color-mix(in srgb,var(--accent) 8%,#fff);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+    border-radius:14px;padding:16px 18px;color:var(--ink-soft);margin-bottom:14px}
+  .pv-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:600;
+    padding:13px 24px;border-radius:100px;margin-top:6px;transition:transform .18s var(--ease),box-shadow .18s var(--ease);
+    box-shadow:0 10px 26px color-mix(in srgb,var(--accent) 30%,transparent)}
+  .pv-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px color-mix(in srgb,var(--accent) 40%,transparent)}
+  .pv-bottom-back{display:inline-block;margin:18px 0 0;font-weight:600;color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+
+  /* ============ Footer ============ */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:48px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* ============ a11y ============ */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">BUSSGELDKATALOG</span></span>
+    </a>
+    <a class="rb-back" href="../">← Alle Apps</a>
+  </div>
+</header>
+
+<section class="pv-hero">
+  <div class="rb-wrap">
+    <div class="pv-col">
+      <a class="pv-back" href="index.html">← Zurück zur App</a>
+      <div class="pv-eyebrow">
+        <img src="icon.png" alt="Bußgeldkatalog App-Icon" width="54" height="54">
+        <div class="meta">Bußgeldkatalog – Verkehrsrecht Deutschland<br>Stand: Juni 2026</div>
+      </div>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="rb-wrap">
+  <div class="pv-body">
+
+    <p class="lead">Der Schutz Ihrer Daten ist uns wichtig. Diese App wurde nach dem Grundsatz der Datensparsamkeit entwickelt: <strong>Sie arbeitet vollständig offline und erfasst, speichert oder überträgt keinerlei personenbezogene Daten.</strong> Diese Erklärung informiert Sie gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz (TDDDG) darüber, wie mit Daten umgegangen wird.</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist der Betreiber dieser App und Website. Bei allen Fragen zum Datenschutz erreichen Sie uns über die folgende Schaltfläche:</p>
+    <a class="pv-cta" href="mailto:rb.app.ios@gmail.com?subject=Datenschutz%20-%20B%C3%BC%C3%9Fgeldkatalog">Contact Us</a>
+
+    <h2>2. Datenverarbeitung in der App</h2>
+    <div class="pv-highlight">Die App erhebt, verarbeitet und übermittelt <strong>keine personenbezogenen Daten</strong>. Es ist keine Registrierung und kein Benutzerkonto erforderlich.</div>
+    <h3>Konkret bedeutet das:</h3>
+    <ul>
+      <li>Keine Erfassung von Namen, E-Mail-Adressen oder sonstigen Kontaktdaten.</li>
+      <li>Keine Standortdaten, kein Zugriff auf Kamera, Mikrofon, Kontakte, Fotos oder Kalender.</li>
+      <li>Keine Cookies und kein Zugriff auf Informationen in Ihrem Endgerät im Sinne des § 25 TDDDG.</li>
+      <li>Keine Werbung, kein Tracking, keine Analyse- oder Statistik-Werkzeuge.</li>
+      <li>Keine Server-Verbindung, keine Netzwerkanfragen, keine Cloud.</li>
+      <li>Keine Dienste oder SDKs von Drittanbietern, keine künstliche Intelligenz.</li>
+    </ul>
+    <p>Sämtliche Inhalte sind fest in der App gespeichert und werden ausschließlich lokal auf Ihrem Gerät verarbeitet. Einstellungen (z. B. helles/dunkles Design) und von Ihnen markierte Favoriten werden ausschließlich lokal auf Ihrem Gerät abgelegt und verlassen dieses nicht.</p>
+
+    <h2>3. Aufruf dieser Website</h2>
+    <p>Diese Website wird über <strong>GitHub Pages</strong> (ein Dienst der GitHub, Inc., bzw. Microsoft Corporation) bereitgestellt. Beim Aufruf der Seiten kann der Hosting-Anbieter aus technischen Gründen automatisch Daten verarbeiten, die Ihr Browser übermittelt, insbesondere:</p>
+    <ul>
+      <li>IP-Adresse des anfragenden Geräts,</li>
+      <li>Datum und Uhrzeit des Zugriffs,</li>
+      <li>Browsertyp/-version und Betriebssystem,</li>
+      <li>die aufgerufene Seite (Referrer).</li>
+    </ul>
+    <p>Diese Verarbeitung erfolgt zur technisch fehlerfreien Auslieferung und Sicherheit der Website und beruht auf unserem berechtigten Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO. Wir selbst setzen auf dieser Website <strong>keine Cookies</strong> und <strong>keine Tracking- oder Analysedienste</strong> ein und haben keinen Zugriff auf diese serverseitigen Protokolldaten. Einzelheiten zur Datenverarbeitung durch den Hosting-Anbieter finden Sie in der <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+
+    <h2>4. Download über den App Store</h2>
+    <p>Den Download der App wickelt Apple über den App Store ab. Dabei verarbeitet Apple Daten (z. B. Apple-ID, Download-Verlauf) in eigener Verantwortung gemäß der <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>. Hierauf haben wir keinen Einfluss; wir erhalten allenfalls anonyme, zusammengefasste Statistiken ohne Personenbezug.</p>
+
+    <h2>5. Weitergabe an Dritte</h2>
+    <p>Eine Weitergabe oder ein Verkauf von Daten an Dritte findet nicht statt. Da in der App keine personenbezogenen Daten erhoben werden, können dort auch keine Daten weitergegeben werden.</p>
+
+    <h2>6. Ihre Rechte</h2>
+    <p>Nach der DSGVO stehen Ihnen gegenüber dem Verantwortlichen folgende Rechte zu: Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie Widerspruch (Art. 21). Zur Ausübung dieser Rechte nutzen Sie bitte die Schaltfläche „Contact Us". Da die App selbst keine personenbezogenen Daten verarbeitet, liegen dort in der Regel keine Daten vor, die berichtigt oder gelöscht werden könnten.</p>
+
+    <h2>7. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Sie betreffender Daten gegen die DSGVO verstößt. Zuständig ist jede deutsche Landesdatenschutzbehörde sowie der/die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI).</p>
+
+    <h2>8. Kinder</h2>
+    <p>Die App richtet sich an die allgemeine Öffentlichkeit und ist für alle Altersgruppen geeignet. Es werden bewusst keine Daten – auch nicht von Kindern – erhoben.</p>
+
+    <h2>9. Änderungen dieser Erklärung</h2>
+    <p>Wir passen diese Datenschutzerklärung an, sobald Änderungen an der App oder der Rechtslage dies erforderlich machen. Es gilt jeweils die hier veröffentlichte, aktuelle Fassung.</p>
+
+    <a class="pv-bottom-back" href="index.html">&larr; Zurück zur Startseite</a>
+
+  </div>
+</div>
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Datenschutz</a> · <a href="../">Alle Apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Kontakt</a><br>
+      © 2026 Bußgeldkatalog · offline-first
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

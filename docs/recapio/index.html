@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recapio — Voice to Text, 100% on your device</title>
+<meta name="description" content="Recapio transcribes audio and video into clean text entirely on your iPhone and iPad. AI summaries, speaker labels, translation, subtitles. No cloud, no subscription.">
+<link rel="icon" type="image/png" href="icon.png">
+<meta property="og:title" content="Recapio — Voice to Text">
+<meta property="og:description" content="Transcribe audio & video into clean text — 100% on your device. AI summaries, speaker labels, translation, subtitles.">
+<meta property="og:image" content="icon.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14201B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#0A84FF;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+
+  /* ===== Header ===== */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ===== Hero ===== */
+  .rb-hero{padding:84px 0 64px;position:relative}
+  .rb-hero-icon{width:104px;height:104px;border-radius:22px;display:block;margin-bottom:30px;
+    box-shadow:0 12px 30px rgba(20,32,27,.16);background:#fff}
+  .rb-eyebrow{display:inline-flex;align-items:center;gap:10px;
+    font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--graphite);margin-bottom:24px;font-weight:700}
+  .rb-eyebrow .tick{width:26px;height:1px;background:var(--line-strong)}
+  .rb-hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(40px,7vw,72px);line-height:1.0;letter-spacing:-.03em;max-width:15ch}
+  .rb-hero h1 .em{font-style:normal;position:relative;white-space:nowrap}
+  .rb-hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.10em;
+    background:var(--accent);border-radius:2px}
+  .rb-lede{font-family:"Hanken Grotesk",sans-serif;font-size:clamp(17px,2vw,20px);color:var(--ink-soft);
+    max-width:52ch;margin:26px 0 0;font-weight:450}
+  .rb-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;
+    padding:15px 26px;border-radius:100px;border:1px solid transparent;
+    transition:transform .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease)}
+  .btn-accent{background:var(--accent);color:#fff;box-shadow:0 12px 30px rgba(10,132,255,.30)}
+  .btn-accent:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(10,132,255,.40)}
+  .rb-note{display:inline-flex;align-items:center;font-family:"Space Mono",monospace;font-size:12px;
+    letter-spacing:.5px;color:var(--graphite)}
+
+  .rb-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .rb-pill{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--ink-soft);background:var(--card);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px}
+
+  /* ===== Section scaffolding ===== */
+  .rb-section{padding:72px 0}
+  .rb-eyebrow-sec{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);
+    letter-spacing:-.03em;line-height:1.04;margin-bottom:14px}
+  .rb-sub{color:var(--graphite);font-size:16px;max-width:60ch;margin-bottom:40px}
+
+  /* ===== Cards ===== */
+  .rb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.rb-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.rb-grid{grid-template-columns:1fr}}
+  .rb-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+  .rb-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,32,27,.10);border-color:var(--line-strong)}
+  .rb-card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17.5px;letter-spacing:-.01em;margin-bottom:7px}
+  .rb-card p{font-size:14.5px;color:var(--graphite)}
+  .rb-card .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;
+    background:color-mix(in srgb,var(--accent) 12%,#fff)}
+
+  /* ===== Privacy band ===== */
+  .rb-band-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .rb-band{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(32px,5vw,56px);text-align:center}
+  .rb-band .rb-title{margin-bottom:14px}
+  .rb-band p{color:var(--graphite);font-size:16px;max-width:680px;margin:0 auto}
+  .rb-pills-band{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+
+  /* ===== Pricing ===== */
+  .rb-price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,5vw,48px);
+    letter-spacing:-.03em;color:var(--accent);line-height:1}
+
+  /* ===== Footer ===== */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:40px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  .rb-disclaimer{max-width:760px;margin:22px auto 0;font-size:12.5px;color:var(--graphite);opacity:.85;line-height:1.55;text-align:center}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* ===== a11y ===== */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../" aria-label="RBApp studio home">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">RECAPIO</span></span>
+    </a>
+    <a class="rb-back" href="../">← All apps</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="rb-hero">
+    <div class="rb-wrap">
+      <img class="rb-hero-icon" src="icon.png" alt="Recapio app icon">
+      <span class="rb-eyebrow"><span class="tick"></span> Productivity</span>
+      <h1>Your recordings, turned into <span class="em">text.</span></h1>
+      <p class="rb-lede">Recapio transcribes audio and video into clean, readable text — entirely on your iPhone and iPad. No cloud. No subscription.</p>
+      <div class="rb-actions">
+        <a class="btn btn-accent" href="https://apps.apple.com/app/id6780275195">Download on the App Store</a>
+        <span class="rb-note">One‑time purchase · iPhone &amp; iPad · 12 languages</span>
+      </div>
+      <div class="rb-badges">
+        <span class="rb-pill">100% on‑device</span>
+        <span class="rb-pill">No account</span>
+        <span class="rb-pill">No tracking</span>
+        <span class="rb-pill">No ads</span>
+        <span class="rb-pill">Works offline</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <span class="rb-eyebrow-sec">Features</span>
+      <h2 class="rb-title">Everything you need to capture speech</h2>
+      <p class="rb-sub">Record, import, or share in — then read, search, summarize, translate and export.</p>
+      <div class="rb-grid">
+        <div class="rb-card"><div class="ic">🎙️</div><h3>Transcribe audio &amp; video</h3><p>Import from Files or Photos, share straight from other apps, or record right in the app.</p></div>
+        <div class="rb-card"><div class="ic">👥</div><h3>Speaker detection</h3><p>Automatically labels who said what. Rename and merge speakers, and browse everyone in People.</p></div>
+        <div class="rb-card"><div class="ic">✨</div><h3>AI, on device</h3><p>Chat with your transcript for summaries, key points, action items, meeting notes and decisions.</p></div>
+        <div class="rb-card"><div class="ic">🌐</div><h3>Translation</h3><p>Turn a transcript into another language right in the editor.</p></div>
+        <div class="rb-card"><div class="ic">⏯️</div><h3>Read along</h3><p>Tap any line to jump to that moment. Adjustable speed, 10‑second skip, and skip‑silence.</p></div>
+        <div class="rb-card"><div class="ic">🔎</div><h3>Search everything</h3><p>Find words across all transcripts and inside a recording, then jump to the exact spot.</p></div>
+        <div class="rb-card"><div class="ic">🏷️</div><h3>Organize with tags</h3><p>Color tags keep your library tidy and easy to filter.</p></div>
+        <div class="rb-card"><div class="ic">📤</div><h3>Export anywhere</h3><p>TXT, Markdown, PDF, CSV, JSON, HTML and subtitles (SRT, VTT).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY BAND -->
+  <div class="rb-band-wrap">
+    <section class="rb-section">
+      <div class="rb-wrap">
+        <div class="rb-band">
+          <h2 class="rb-title">Private by design</h2>
+          <p>Everything runs locally on your device. There are no analytics, no tracking, and no ads. The only time Recapio uses the network is to download the recognition or AI models you choose — and only when you ask.</p>
+          <div class="rb-pills-band">
+            <span class="rb-pill">100% on‑device</span>
+            <span class="rb-pill">No account</span>
+            <span class="rb-pill">No tracking</span>
+            <span class="rb-pill">No ads</span>
+            <span class="rb-pill">Works offline</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRICING -->
+  <section class="rb-section">
+    <div class="rb-wrap" style="text-align:center">
+      <span class="rb-eyebrow-sec" style="display:block">Pricing</span>
+      <h2 class="rb-title">One price. No strings.</h2>
+      <p class="rb-sub" style="margin-left:auto;margin-right:auto">Pay once and get every feature — forever. No subscriptions, no in‑app purchases, no paywalls.</p>
+      <div class="rb-price">Buy once · own it</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../" aria-label="RBApp studio home">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Privacy policy</a> · <a href="../">All apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Contact</a><br>
+      © 2026 RBApp · offline-first
+    </div>
+  </div>
+  <p class="rb-disclaimer">© Recapio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

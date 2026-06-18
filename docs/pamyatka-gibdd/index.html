@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Памятка ГИБДД — справочник для сотрудника ДПС</title>
+<meta name="description" content="Карманный справочник для сотрудника Госавтоинспекции: статьи КоАП с фабулами, УК РФ 264.1–264.3, полный текст ПДД, дорожные знаки, штрафы и нормативная база. Работает без интернета.">
+<meta name="theme-color" content="#14201B">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#1466BF;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%);
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+
+  /* ============ Header ============ */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Hero ============ */
+  .rb-hero{padding:72px 0 56px;position:relative}
+  .rb-hero-icon{width:104px;height:104px;border-radius:22px;box-shadow:0 12px 30px rgba(20,32,27,.16);margin-bottom:28px;background:#fff}
+  .rb-eyebrow-hero{display:inline-flex;align-items:center;gap:10px;
+    font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--graphite);margin-bottom:22px}
+  .rb-eyebrow-hero .tick{width:26px;height:1px;background:var(--line-strong)}
+  .rb-eyebrow-hero b{color:var(--accent);font-weight:700}
+  .rb-hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.03em;max-width:16ch}
+  .rb-hero h1 .em{font-style:normal;position:relative;white-space:nowrap}
+  .rb-hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.10em;
+    background:var(--accent);border-radius:2px}
+  .rb-hero-lede{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:52ch;margin:26px 0 0;font-weight:450}
+  .rb-hero-sub{font-size:16px;color:var(--graphite);max-width:60ch;margin:14px 0 0}
+  .rb-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .rb-badge{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.4px;
+    border:1px solid var(--line-strong);background:var(--card);border-radius:100px;padding:8px 15px;color:var(--ink-soft)}
+
+  /* ============ Stat band ============ */
+  .rb-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .rb-band .rb-wrap{padding-top:0;padding-bottom:0}
+  .rb-stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:36px 0}
+  .rb-stat{padding:26px 22px;border-right:1px solid var(--line)}
+  .rb-stat:last-child{border-right:0}
+  .rb-stat .num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);letter-spacing:-.03em;color:var(--accent)}
+  .rb-stat .lbl{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--graphite);margin-top:6px}
+  @media(max-width:680px){.rb-stats{grid-template-columns:repeat(2,1fr)}.rb-stat:nth-child(2){border-right:0}.rb-stat:nth-child(1),.rb-stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ============ Sections ============ */
+  .rb-section{padding:72px 0}
+  .rb-eyebrow{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);
+    letter-spacing:-.03em;line-height:1.04;margin-bottom:14px}
+  .rb-sub{color:var(--graphite);font-size:16px;max-width:60ch;margin-bottom:40px}
+
+  /* ============ Cards / feature grid ============ */
+  .rb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.rb-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.rb-grid{grid-template-columns:1fr}}
+  .rb-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+  .rb-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,32,27,.10);border-color:var(--line-strong)}
+  .rb-card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17.5px;letter-spacing:-.01em;margin-bottom:7px}
+  .rb-card p{font-size:14.5px;color:var(--graphite)}
+  .rb-card .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;
+    background:color-mix(in srgb,var(--accent) 12%,#fff)}
+
+  /* ============ Why list ============ */
+  .rb-why{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:620px){.rb-why{grid-template-columns:1fr}}
+  .rb-why-item{display:flex;gap:14px;align-items:flex-start;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;padding:18px}
+  .rb-why-item .dot{flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:color-mix(in srgb,var(--accent) 12%,#fff);display:grid;place-items:center;font-size:18px}
+  .rb-why-item b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15.5px;letter-spacing:-.01em;margin-bottom:2px}
+  .rb-why-item span{font-size:14px;color:var(--graphite)}
+
+  /* ============ For whom ============ */
+  .rb-forwhom{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(32px,5vw,56px);text-align:center;max-width:820px;margin:0 auto}
+  .rb-forwhom .rb-title{margin-bottom:18px}
+  .rb-forwhom p{color:var(--graphite);font-size:clamp(16px,2vw,18px);max-width:64ch;margin:0 auto}
+
+  /* ============ Footer ============ */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:40px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  .rb-disclaimer{max-width:760px;margin:22px auto 0;font-size:12.5px;color:var(--graphite);opacity:.85;line-height:1.55}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* ============ A11y ============ */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">ПАМЯТКА ГИБДД</span></span>
+    </a>
+    <a class="rb-back" href="../">← Все приложения</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="rb-hero">
+    <div class="rb-wrap">
+      <img src="icon.png" alt="Памятка ГИБДД" class="rb-hero-icon" width="104" height="104">
+      <span class="rb-eyebrow-hero"><span class="tick"></span> TRAFFIC LAW <b>·</b> RU</span>
+      <h1>Памятка <span class="em">ГИБДД</span></h1>
+      <p class="rb-hero-lede">Карманный справочник для сотрудника Госавтоинспекции</p>
+      <p class="rb-hero-sub">Статьи КоАП с готовыми фабулами, УК РФ, полный текст ПДД, дорожные знаки, штрафы и нормативная база — всё под рукой и работает без интернета.</p>
+      <div class="rb-badges">
+        <span class="rb-badge">📴 Работает офлайн</span>
+        <span class="rb-badge">🔎 Быстрый поиск</span>
+        <span class="rb-badge">⭐ Избранное</span>
+        <span class="rb-badge">🎓 Тесты</span>
+        <span class="rb-badge">🌙 Тёмная тема</span>
+        <span class="rb-badge">⚖️ Актуальные редакции</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights / Stat band -->
+  <div class="rb-band">
+    <div class="rb-wrap">
+      <div class="rb-stats">
+        <div class="rb-stat"><div class="num">53</div><div class="lbl">статьи КоАП с фабулами</div></div>
+        <div class="rb-stat"><div class="num">26</div><div class="lbl">разделов ПДД РФ</div></div>
+        <div class="rb-stat"><div class="num">300+</div><div class="lbl">знаков и разметки</div></div>
+        <div class="rb-stat"><div class="num">3</div><div class="lbl">статьи УК РФ (264.1–264.3)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <span class="rb-eyebrow">Что внутри</span>
+      <h2 class="rb-title">Что внутри</h2>
+      <p class="rb-sub">Всё необходимое для дежурства и оформления материалов — в одном приложении.</p>
+      <div class="rb-grid">
+
+        <div class="rb-card">
+          <div class="ic">📋</div>
+          <h3>КоАП, глава 12</h3>
+          <p>Статьи с частями, штрафами, сроками лишения и ареста. Для каждой части — готовая фабула и ссылки на нарушенные нормы ПДД.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">⚖️</div>
+          <h3>УК РФ 264.1–264.3</h3>
+          <p>Составы преступлений, алгоритмы действий, шаблоны рапортов и фабул.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">📖</div>
+          <h3>Полный текст ПДД</h3>
+          <p>Все 26 разделов Правил дорожного движения с удобным поиском по пунктам.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🚸</div>
+          <h3>Знаки и разметка</h3>
+          <p>Более 300 дорожных знаков и линий разметки с изображениями, номерами и описаниями.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🧍</div>
+          <h3>Сигналы регулировщика</h3>
+          <p>Три жеста регулировщика и их значения с пояснениями.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🚦</div>
+          <h3>Скоростные режимы</h3>
+          <p>Таблица ограничений скорости по типам транспортных средств и видам дорог.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🩺</div>
+          <h3>Освидетельствование</h3>
+          <p>Порядок отстранения, освидетельствования на месте и направления на медосвидетельствование.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🚙</div>
+          <h3>Задержание ТС</h3>
+          <p>Основания задержания транспортного средства и порядок эвакуации на спецстоянку.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🔶</div>
+          <h3>Опознавательные знаки</h3>
+          <p>Обязательные опознавательные знаки ТС и ответственность за их отсутствие.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🪪</div>
+          <h3>Категории прав</h3>
+          <p>Все категории и подкатегории водительских удостоверений с пояснениями.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">💰</div>
+          <h3>Сводка штрафов</h3>
+          <p>Быстрый поиск санкции по статьям главы 12 КоАП в одном списке.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">📚</div>
+          <h3>Библиотека НПА</h3>
+          <p>Приказ МВД, постановления Пленума и решения Верховного Суда, Венская конвенция, ГОСТы, процессуальные документы.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">✅</div>
+          <h3>Чек-листы</h3>
+          <p>Интерактивные проверки: водителя, автобуса, действия по штрафам.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">📝</div>
+          <h3>Шаблоны рапортов</h3>
+          <p>Готовые шаблоны рапортов и фабул — можно скопировать и поделиться.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🛞</div>
+          <h3>Техническое</h3>
+          <p>Неисправности тормозов, рулевого, сцепки, требования к тонировке и установке номеров.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">📅</div>
+          <h3>Сроки и подсудность</h3>
+          <p>Сроки давности привлечения (ст. 4.5) и кто рассматривает дело — суд или ГИБДД (ст. 23.1).</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🔒</div>
+          <h3>Меры обеспечения</h3>
+          <p>Отстранение от управления, задержание ТС и административный арест — основания по статьям.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">💥</div>
+          <h3>Действия при ДТП</h3>
+          <p>Алгоритм действий, оформление по европротоколу и актуальные лимиты страховых выплат.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🧒</div>
+          <h3>Перевозка детей</h3>
+          <p>Детские удерживающие устройства по возрастам и правила организованной перевозки групп.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">🎓</div>
+          <h3>Тесты для самопроверки</h3>
+          <p>Проверьте знания по штрафам, дорожным знакам и ПДД — с пояснениями к ответам.</p>
+        </div>
+
+        <div class="rb-card">
+          <div class="ic">⭐</div>
+          <h3>Избранное</h3>
+          <p>Сохраняйте часто используемые статьи и знаки для быстрого доступа.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <div class="rb-band">
+    <section class="rb-section">
+      <div class="rb-wrap">
+        <span class="rb-eyebrow">Почему удобно</span>
+        <h2 class="rb-title">Почему удобно</h2>
+        <p class="rb-sub">Сделано так, чтобы нужная норма находилась за пару касаний.</p>
+        <div class="rb-why">
+          <div class="rb-why-item"><div class="dot">📴</div><div><b>Работает без интернета</b><span>Все данные внутри приложения — доступны в любой точке маршрута.</span></div></div>
+          <div class="rb-why-item"><div class="dot">🔎</div><div><b>Мгновенный поиск</b><span>По статьям, пунктам ПДД, знакам и размерам штрафов.</span></div></div>
+          <div class="rb-why-item"><div class="dot">📄</div><div><b>Готовые фабулы</b><span>Формулировки для протоколов — скопировать и вставить.</span></div></div>
+          <div class="rb-why-item"><div class="dot">⚖️</div><div><b>Актуальные данные</b><span>Тексты сверены с официальными источниками.</span></div></div>
+          <div class="rb-why-item"><div class="dot">⭐</div><div><b>Избранное</b><span>Часто используемые статьи и знаки — в один тап.</span></div></div>
+          <div class="rb-why-item"><div class="dot">🎓</div><div><b>Самопроверка</b><span>Тесты по штрафам, знакам и ПДД с пояснениями.</span></div></div>
+          <div class="rb-why-item"><div class="dot">🌙</div><div><b>Светлая и тёмная тема</b><span>Комфортно в любое время суток.</span></div></div>
+          <div class="rb-why-item"><div class="dot">🧭</div><div><b>Чистый интерфейс</b><span>Без лишнего — только то, что нужно на дежурстве.</span></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- For whom -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <div class="rb-forwhom">
+        <span class="rb-eyebrow">Для кого</span>
+        <h2 class="rb-title">Для кого</h2>
+        <p>Инспекторы ДПС и сотрудники ГИБДД · курсанты и слушатели · юристы и автоюристы · водители, которым важно знать свои права и обязанности.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Политика конфиденциальности</a> · <a href="../">Все приложения</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Написать нам</a><br>
+      © 2026 RBApp · offline-first
+    </div>
+  </div>
+  <div class="rb-wrap">
+    <p class="rb-disclaimer">Приложение носит справочно-информационный характер и не является официальным изданием нормативных правовых актов. Перед принятием процессуальных решений сверяйтесь с официальными источниками.</p>
+  </div>
+</footer>
+
+</body>
+</html>

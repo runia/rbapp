@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — Recapio</title>
+<meta name="description" content="Recapio privacy policy. Recapio processes everything on your device and does not collect, store, or transmit your personal data.">
+<link rel="icon" type="image/png" href="icon.png">
+<meta name="theme-color" content="#14201B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#0A84FF;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+
+  /* ===== Header ===== */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ===== Reading column ===== */
+  .reading{max-width:760px;margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.reading{padding:0 20px}}
+
+  /* ===== Privacy hero ===== */
+  .rb-phero{padding:64px 0 36px;border-bottom:1px solid var(--line)}
+  .rb-phero-icon{width:76px;height:76px;border-radius:18px;display:block;margin-bottom:22px;
+    box-shadow:0 12px 30px rgba(20,32,27,.16);background:#fff}
+  .rb-backlink{display:inline-flex;align-items:center;font-family:"Space Mono",monospace;font-size:12px;
+    letter-spacing:.6px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+    border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent);padding-bottom:2px}
+  .rb-phero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(32px,5vw,48px);letter-spacing:-.03em;line-height:1.02}
+
+  /* ===== Body content ===== */
+  main{padding:40px 0 24px}
+  main h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(21px,3vw,26px);
+    letter-spacing:-.02em;line-height:1.15;margin:38px 0 10px;display:flex;align-items:baseline;gap:11px}
+  main h2::before{content:"";flex:0 0 auto;width:14px;height:3px;border-radius:2px;background:var(--accent);
+    transform:translateY(-4px)}
+  main p,main li{color:var(--ink-soft);font-size:16px}
+  main p{margin:0 0 4px}
+  .lead{font-size:18px;color:var(--graphite);margin-bottom:8px}
+  main a{color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+  ul{padding-left:20px;margin:6px 0}
+  li{margin:6px 0}
+  .callout{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:24px 0;
+    color:var(--ink-soft);font-size:15.5px}
+  table{width:100%;border-collapse:collapse;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;font-size:15px}
+  th{background:var(--card);font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--graphite);font-weight:700}
+
+  /* ===== Footer ===== */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:40px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  .rb-disclaimer{max-width:760px;margin:22px auto 0;font-size:12.5px;color:var(--graphite);opacity:.85;line-height:1.55;text-align:center}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* ===== a11y ===== */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../" aria-label="RBApp studio home">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">RECAPIO</span></span>
+    </a>
+    <a class="rb-back" href="../">← All apps</a>
+  </div>
+</header>
+
+<section class="rb-phero">
+  <div class="reading">
+    <a class="rb-backlink" href="index.html">← Back to the app</a>
+    <img class="rb-phero-icon" src="icon.png" alt="Recapio app icon">
+    <h1>Privacy Policy</h1>
+  </div>
+</section>
+
+<main>
+  <div class="reading">
+    <p class="lead">Recapio is built to keep your data on your device. We do not collect, store, sell, or transmit your personal information. There are no accounts, no analytics, and no tracking.</p>
+
+    <div class="callout">
+      <strong>In short:</strong> your recordings, transcripts, and everything you create stay on your iPhone or iPad. The app works fully offline; the only network use is downloading the recognition or AI models you explicitly choose.
+    </div>
+
+    <h2>Information we collect</h2>
+    <p><strong>None.</strong> Recapio does not collect or receive any personal data. We have no servers that store your content, and the app does not require an account or sign‑in.</p>
+
+    <h2>Your content</h2>
+    <p>Audio and video you record or import, and the transcripts, notes, tags and translations you create, are stored locally on your device (and in your own iCloud/device backups, if you have those enabled by the system). This content is never uploaded to us or to any third party.</p>
+
+    <h2>Microphone</h2>
+    <p>The microphone is used only to record audio when you start a recording. Recordings are saved locally on your device. The microphone is never used in the background or without your action.</p>
+
+    <h2>Photos and Files</h2>
+    <p>If you import a file from Photos or Files (or share one into the app), it is copied to the app and processed locally so it can be transcribed. We do not access your library for any other purpose.</p>
+
+    <h2>Network use</h2>
+    <p>Recapio connects to the internet only to download the on‑device speech‑recognition or AI models that you choose to use, the first time they are needed. These model files are downloaded from their public hosting (e.g., Hugging Face). Your audio, transcripts, and other content are <strong>not</strong> sent over the network.</p>
+
+    <h2>Analytics, tracking, and ads</h2>
+    <p>There are none. Recapio contains no third‑party analytics, advertising, or tracking SDKs, and does not use the Advertising Identifier.</p>
+
+    <h2>Data sharing</h2>
+    <p>Because we do not collect your data, we have nothing to share or sell. No data is shared with third parties.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>You are in full control. Delete individual recordings inside the app at any time, or remove all data by deleting the app. We hold no copies because your content never leaves your device.</p>
+
+    <h2>Children’s privacy</h2>
+    <p>Recapio does not collect personal information from anyone, including children.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, we will update this page and revise the “Last updated” date above.</p>
+  </div>
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../" aria-label="RBApp studio home">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Privacy policy</a> · <a href="../">All apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Contact</a><br>
+      © 2026 RBApp · offline-first
+    </div>
+  </div>
+  <p class="rb-disclaimer">© Recapio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

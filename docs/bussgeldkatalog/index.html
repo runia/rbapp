@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bußgeldkatalog – Verkehrsrecht Deutschland</title>
+<meta name="description" content="Bußgeldkatalog, StVO, Verkehrszeichen und Punkte in Flensburg – alles in einer App, komplett offline. Verstoß, Bußgeld, Punkte und Fahrverbot sofort nachschlagen.">
+<meta name="theme-color" content="#14201B">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#D7322B;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%);
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.rb-wrap{padding:0 20px}}
+
+  /* ============ Header ============ */
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Hero ============ */
+  .rb-hero{padding:72px 0 56px}
+  .rb-hero-top{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .rb-hero-icon{flex:0 0 auto;width:104px;height:104px;border-radius:22px;
+    box-shadow:0 12px 30px rgba(20,32,27,.16);background:#fff}
+  .rb-eyebrow{display:inline-flex;align-items:center;gap:10px;
+    font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--graphite);margin-bottom:18px}
+  .rb-eyebrow .tick{width:26px;height:1px;background:var(--line-strong)}
+  .rb-hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.03em;margin-top:4px}
+  .rb-hero h1 .em{font-style:normal;position:relative;white-space:nowrap}
+  .rb-hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.11em;
+    background:var(--accent);border-radius:2px}
+  .rb-lede{font-family:"Hanken Grotesk",sans-serif;font-size:clamp(17px,2vw,20px);color:var(--ink-soft);
+    max-width:52ch;margin:26px 0 0;font-weight:450}
+  .rb-sublede{color:var(--graphite);font-size:16px;max-width:60ch;margin:14px 0 0}
+  .rb-badges{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0}
+  .rb-pill{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--ink-soft);border:1px solid var(--line-strong);background:var(--card);border-radius:100px;padding:8px 14px}
+  .rb-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;
+    padding:15px 26px;border-radius:100px;border:1px solid transparent;
+    transition:transform .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease)}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(20,32,27,.22)}
+  .btn .arr{transition:transform .2s var(--ease)}
+  .btn:hover .arr{transform:translate(3px,-3px)}
+  @media(max-width:480px){.rb-hero-icon{width:84px;height:84px;border-radius:18px}}
+
+  /* ============ Stat band ============ */
+  .rb-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rb-stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .rb-stat{padding:26px 22px;border-right:1px solid var(--line)}
+  .rb-stat:last-child{border-right:0}
+  .rb-stat .num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);letter-spacing:-.03em;color:var(--accent);line-height:1}
+  .rb-stat .lbl{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--graphite);margin-top:6px}
+  @media(max-width:680px){.rb-stats{grid-template-columns:repeat(2,1fr)}.rb-stat:nth-child(2){border-right:0}.rb-stat:nth-child(1),.rb-stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ============ Section ============ */
+  .rb-section{padding:72px 0}
+  .rb-eyebrow-sec{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+  .rb-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);
+    letter-spacing:-.03em;line-height:1.04;margin-bottom:14px}
+  .rb-sub{color:var(--graphite);font-size:16px;max-width:60ch;margin-bottom:40px}
+
+  /* ============ Cards ============ */
+  .rb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.rb-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.rb-grid{grid-template-columns:1fr}}
+  .rb-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+  .rb-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,32,27,.10);border-color:var(--line-strong)}
+  .rb-card .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;
+    background:color-mix(in srgb,var(--accent) 12%,#fff)}
+  .rb-card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17.5px;letter-spacing:-.01em;margin-bottom:7px}
+  .rb-card p{font-size:14.5px;color:var(--graphite)}
+
+  /* ============ Feature list ============ */
+  .rb-band-alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rb-feature-list{columns:2;column-gap:40px;max-width:860px;margin:0}
+  .rb-feature-list li{break-inside:avoid;list-style:none;padding:11px 0 11px 30px;position:relative;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:15px}
+  .rb-feature-list li::before{content:"✓";position:absolute;left:0;top:11px;color:var(--accent);font-weight:700;font-family:"Space Mono",monospace}
+  @media(max-width:640px){.rb-feature-list{columns:1}}
+
+  /* ============ Contact block ============ */
+  .rb-contact{background:var(--ink);color:var(--paper);border-radius:24px;padding:clamp(40px,6vw,64px);position:relative;overflow:hidden}
+  .rb-contact::after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,color-mix(in srgb,var(--accent) 30%,transparent),transparent 65%);pointer-events:none}
+  .rb-contact h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,4.5vw,46px);
+    letter-spacing:-.03em;line-height:1.02;position:relative}
+  .rb-contact p{color:#b6bdb6;font-size:clamp(16px,2vw,18px);max-width:46ch;margin-top:18px;position:relative}
+  .rb-contact-cta{display:inline-flex;align-items:center;gap:10px;margin-top:30px;position:relative;
+    background:var(--accent);color:#fff;font-weight:600;font-size:16px;padding:16px 28px;border-radius:100px;
+    transition:transform .18s var(--ease),box-shadow .18s var(--ease);
+    box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 32%,transparent)}
+  .rb-contact-cta:hover{transform:translateY(-2px);box-shadow:0 16px 38px color-mix(in srgb,var(--accent) 42%,transparent)}
+  .rb-contact-cta .arr{transition:transform .2s var(--ease)}
+  .rb-contact-cta:hover .arr{transform:translate(3px,-3px)}
+
+  /* ============ Footer ============ */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:40px}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  .rb-disclaimer{max-width:760px;margin:22px auto 0;font-size:12.5px;color:var(--graphite);opacity:.85;line-height:1.55}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* ============ a11y ============ */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">BUSSGELDKATALOG</span></span>
+    </a>
+    <a class="rb-back" href="../">← Alle Apps</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="rb-hero">
+    <div class="rb-wrap">
+      <div class="rb-hero-top">
+        <img class="rb-hero-icon" src="icon.png" alt="Bußgeldkatalog App-Icon" width="104" height="104">
+        <div>
+          <span class="rb-eyebrow"><span class="tick"></span> TRAFFIC LAW · DE</span>
+          <h1>Bußgeld<span class="em">katalog</span></h1>
+        </div>
+      </div>
+      <p class="rb-lede">Das deutsche Verkehrsrecht – in einer App, komplett offline.</p>
+      <p class="rb-sublede">Verstoß, Bußgeld, Punkte in Flensburg und das passende Verkehrszeichen – sofort nachschlagen, egal ob als Autofahrer, Fahrschüler oder Profi am Steuer.</p>
+      <div class="rb-badges">
+        <span class="rb-pill">100 % offline</span>
+        <span class="rb-pill">Kostenlos</span>
+        <span class="rb-pill">Werbefrei</span>
+        <span class="rb-pill">Kein Konto</span>
+      </div>
+      <div class="rb-hero-actions">
+        <a class="btn btn-primary" href="mailto:rb.app.ios@gmail.com?subject=B%C3%BC%C3%9Fgeldkatalog%20App">Contact Us <span class="arr" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAND -->
+  <div class="rb-band">
+    <div class="rb-wrap" style="padding-top:0;padding-bottom:0">
+      <div class="rb-stats" style="margin:0">
+        <div class="rb-stat"><div class="num">14</div><div class="lbl">Kategorien</div></div>
+        <div class="rb-stat"><div class="num">83</div><div class="lbl">Verstöße</div></div>
+        <div class="rb-stat"><div class="num">130+</div><div class="lbl">Verkehrszeichen</div></div>
+        <div class="rb-stat"><div class="num">§ 1–53</div><div class="lbl">StVO im Volltext</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <span class="rb-eyebrow-sec">Überblick</span>
+      <h2 class="rb-title">Alles Wichtige auf einen Blick</h2>
+      <p class="rb-sub">Schluss mit dem Wühlen in endlosen Gesetzes-PDFs. Hier finden Sie Verstoß, Bußgeld, Punkte und Paragraf in Sekunden.</p>
+      <div class="rb-grid">
+        <div class="rb-card"><div class="ic">💶</div><h3>Bußgeldkatalog</h3><p>14 Kategorien, 83 Verstöße – mit Bußgeld in Euro, Punkten in Flensburg und möglichem Fahrverbot.</p></div>
+        <div class="rb-card"><div class="ic">🅿️</div><h3>Punkte in Flensburg</h3><p>Wie viele Punkte gibt es wofür? Ab wann drohen Ermahnung, Verwarnung oder Führerscheinentzug? Wann werden sie gelöscht?</p></div>
+        <div class="rb-card"><div class="ic">🚸</div><h3>Verkehrszeichen</h3><p>Über 130 Zeichen und Fahrbahnmarkierungen mit Abbildung, Nummer und amtlicher Bedeutung – mit Suche und Zoom.</p></div>
+        <div class="rb-card"><div class="ic">📖</div><h3>StVO im Volltext</h3><p>Alle Paragrafen der Straßenverkehrs-Ordnung (§ 1–§ 53) im amtlichen Wortlaut, durchsuchbar.</p></div>
+        <div class="rb-card"><div class="ic">⚖️</div><h3>Verkehrsstraftaten</h3><p>Die wichtigsten Tatbestände aus StGB und StVG: Trunkenheit, Gefährdung, Rennen, Fahrerflucht, Nötigung u. a.</p></div>
+        <div class="rb-card"><div class="ic">🔎</div><h3>Globale Suche</h3><p>Ein Suchfeld für Bußgelder, StVO, Verkehrszeichen und Gesetze – findet sofort, was Sie brauchen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL FEATURE LIST -->
+  <div class="rb-band-alt">
+    <section class="rb-section">
+      <div class="rb-wrap">
+        <span class="rb-eyebrow-sec">Funktionsumfang</span>
+        <h2 class="rb-title">Der komplette Funktionsumfang</h2>
+        <p class="rb-sub">Ein Nachschlagewerk für den gesamten Straßenverkehr – von der Promillegrenze bis zur Rettungsgasse.</p>
+        <ul class="rb-feature-list">
+          <li>Bußgeldkatalog: Geschwindigkeit, Abstand, Handy am Steuer</li>
+          <li>Alkohol &amp; Drogen, Rotlicht, Vorfahrt, Überholen</li>
+          <li>Parken &amp; Halten, Rettungsgasse, Gurt &amp; Kindersicherung</li>
+          <li>Umweltzone, Dokumente, Bahnübergang</li>
+          <li>Punkte in Flensburg – Stufen, Maßnahmen, Tilgung</li>
+          <li>Über 130 Verkehrszeichen &amp; Fahrbahnmarkierungen mit Bild</li>
+          <li>Vollständige StVO (§ 1–§ 53)</li>
+          <li>Verkehrsstraftaten nach StGB &amp; StVG</li>
+          <li>Höchstgeschwindigkeiten nach Fahrzeug &amp; Straße</li>
+          <li>Promillegrenzen (0,0 / 0,5 / 1,1 ‰) &amp; Drogen am Steuer</li>
+          <li>Pflicht-Ausstattung: Warndreieck, Verbandkasten, Warnweste</li>
+          <li>Kindersicherung &amp; mitzuführende Dokumente</li>
+          <li>Verhalten bei einem Verkehrsunfall</li>
+          <li>Einspruch gegen den Bußgeldbescheid (Fristen &amp; Ablauf)</li>
+          <li>Blaulicht, Martinshorn &amp; Rettungsgasse</li>
+          <li>Abschleppen &amp; Sicherstellung</li>
+          <li>Maßnahmen, Sanktionen &amp; Fahrverbote</li>
+          <li>Verjährung &amp; Zuständigkeit</li>
+          <li>Plaketten &amp; Kennzeichen</li>
+          <li>Handzeichen der Polizeibeamten (§ 36 StVO)</li>
+          <li>Führerscheinklassen von AM bis DE</li>
+          <li>Gesetzes-Bibliothek: StVG, FeV, StVZO, BKatV</li>
+          <li>Sachverhalt-Generator für schnelle Notizen</li>
+          <li>Prüflisten &amp; Favoriten für direkten Zugriff</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- WHY -->
+  <section class="rb-section">
+    <div class="rb-wrap">
+      <span class="rb-eyebrow-sec">Vorteile</span>
+      <h2 class="rb-title">Warum diese App?</h2>
+      <div class="rb-grid">
+        <div class="rb-card"><div class="ic">📴</div><h3>Komplett offline</h3><p>Funktioniert ohne Internet – überall und jederzeit, auch im Funkloch.</p></div>
+        <div class="rb-card"><div class="ic">🔒</div><h3>Privat &amp; sicher</h3><p>Keine Konten, kein Tracking, keine Werbung. Es werden keinerlei Daten erfasst.</p></div>
+        <div class="rb-card"><div class="ic">🌗</div><h3>Hell &amp; Dunkel</h3><p>Aufgeräumtes Design mit Unterstützung für den hellen und dunklen Modus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="rb-section" style="padding-top:0">
+    <div class="rb-wrap">
+      <div class="rb-contact">
+        <h2>Fragen oder Feedback?</h2>
+        <p>Wir freuen uns über Ihre Nachricht – schreiben Sie uns einfach.</p>
+        <a class="rb-contact-cta" href="mailto:rb.app.ios@gmail.com?subject=B%C3%BC%C3%9Fgeldkatalog%20App">Contact Us <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+      <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="privacy.html">Datenschutz</a> · <a href="../">Alle Apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Kontakt</a><br>
+      © 2026 Bußgeldkatalog · offline-first
+    </div>
+  </div>
+  <div class="rb-wrap">
+    <p class="rb-disclaimer">Unabhängiges, inoffizielles Nachschlagewerk. Steht in keiner Verbindung zu einer Behörde, Polizei oder dem Kraftfahrt-Bundesamt. Alle Angaben dienen der Information und ersetzen keine Rechtsberatung.</p>
+  </div>
+</footer>
+
+</body>
+</html>
