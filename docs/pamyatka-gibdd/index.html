@@ -56,7 +56,8 @@
 
   /* ============ Hero ============ */
   .rb-hero{padding:72px 0 56px;position:relative}
-  .rb-hero-icon{width:104px;height:104px;border-radius:22px;box-shadow:0 12px 30px rgba(20,32,27,.16);margin-bottom:28px;background:#fff}
+  .rb-hero-icon{width:104px;height:104px;border-radius:22px;box-shadow:0 12px 30px rgba(20,32,27,.16);background:#fff}
+  .hero-id{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:4px}
   .rb-eyebrow-hero{display:inline-flex;align-items:center;gap:10px;
     font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;
     color:var(--graphite);margin-bottom:22px}
@@ -134,6 +135,14 @@
   .rb-appstore-txt small{font-family:"Hanken Grotesk",sans-serif;font-size:11px;font-weight:500;letter-spacing:.2px;opacity:.88;text-transform:none}
   .rb-appstore-txt b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;font-weight:700;letter-spacing:-.01em}
 
+  /* ============ Buttons & CTA row ============ */
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;padding:14px 24px;border-radius:100px;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(20,32,27,.22)}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;align-items:center}
+
   /* ============ A11y ============ */
   :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -156,16 +165,20 @@
   <!-- HERO -->
   <section class="rb-hero">
     <div class="rb-wrap">
-      <img src="icon.png" alt="Памятка ГИБДД" class="rb-hero-icon" width="104" height="104">
       <span class="rb-eyebrow-hero"><span class="tick"></span> TRAFFIC LAW <b>·</b> RU</span>
-      <h1>Памятка <span class="em">ГИБДД</span></h1>
+      <div class="hero-id">
+        <img src="icon.png" alt="Памятка ГИБДД" class="rb-hero-icon" width="104" height="104">
+        <h1>Памятка <span class="em">ГИБДД</span></h1>
+      </div>
       <p class="rb-hero-lede">Карманный справочник для сотрудника Госавтоинспекции</p>
       <p class="rb-hero-sub">Статьи КоАП с готовыми фабулами, УК РФ, полный текст ПДД, дорожные знаки, штрафы и нормативная база — всё под рукой и работает без интернета.</p>
-      <div style="margin-top:32px">
+      <div class="cta-row">
         <a class="rb-appstore" href="https://apps.apple.com/us/app/id6778790010" aria-label="Download on the App Store">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.365 1.43c0 1.14-.42 2.2-1.26 3.06-.9.92-1.96 1.46-3.12 1.37-.13-1.1.42-2.27 1.2-3.06.86-.86 2.05-1.47 3.18-1.5.02.04.02.09 0 .13zM20.6 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.51-4.12 3.52-1.54.02-1.93-.99-4.02-.98-2.09.01-2.52.99-4.06.98-1.73-.02-3.05-1.78-4.04-3.34-2.85-3.27-3.14-8.97-.29-11.9.97-1.01 2.27-1.66 3.66-1.66 1.42 0 2.31.98 3.49.98 1.14 0 1.83-.98 3.48-.98 1.23 0 2.54.66 3.47 1.83-3.05 1.67-2.55 6.02.42 7.34-.42 1-1.06 2.06-1.55 2.65z"/></svg>
           <span class="rb-appstore-txt"><small>Download on the</small><b>App&nbsp;Store</b></span>
         </a>
+        <a class="btn btn-primary" href="mailto:rb.app.ios@gmail.com">Связаться</a>
+        <a class="btn btn-ghost" href="privacy/">Политика конфиденциальности</a>
       </div>
       <div class="rb-badges">
         <span class="rb-badge">📴 Работает офлайн</span>
@@ -368,9 +381,9 @@
       <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
     </a>
     <div class="rb-foot-meta">
-      <a href="privacy.html">Политика конфиденциальности</a> · <a href="../">Все приложения</a><br>
+      <a href="privacy/">Политика конфиденциальности</a> · <a href="../">Все приложения</a><br>
       <a href="mailto:rb.app.ios@gmail.com">Написать нам</a><br>
-      © 2026 RBApp · offline-first
+      © <span class="js-year">2026</span> RBApp · offline-first
     </div>
   </div>
   <div class="rb-wrap">
@@ -378,5 +391,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </body>
 </html>

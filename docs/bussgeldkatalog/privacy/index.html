@@ -6,7 +6,7 @@
 <title>Datenschutzerklärung – Bußgeldkatalog</title>
 <meta name="description" content="Datenschutzerklärung der App Bußgeldkatalog – Verkehrsrecht Deutschland. Die App arbeitet vollständig offline und erfasst keine personenbezogenen Daten.">
 <meta name="theme-color" content="#14201B">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -105,21 +105,21 @@
 
 <header class="rb-head">
   <div class="rb-wrap rb-head-row">
-    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+    <a class="rb-brand" href="../../" aria-label="RBApp Studio">
       <span class="rb-mark">RB</span>
       <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">BUSSGELDKATALOG</span></span>
     </a>
-    <a class="rb-back" href="../">← Alle Apps</a>
+    <a class="rb-back" href="../../">← Alle Apps</a>
   </div>
 </header>
 
 <section class="pv-hero">
   <div class="rb-wrap">
     <div class="pv-col">
-      <a class="pv-back" href="index.html">← Zurück zur App</a>
+      <a class="pv-back" href="../">← Zurück zur App</a>
       <div class="pv-eyebrow">
-        <img src="icon.png" alt="Bußgeldkatalog App-Icon" width="54" height="54">
-        <div class="meta">Bußgeldkatalog – Verkehrsrecht Deutschland<br>Stand: Juni 2026</div>
+        <img src="../icon.png" alt="Bußgeldkatalog App-Icon" width="54" height="54">
+        <div class="meta">Bußgeldkatalog – Verkehrsrecht Deutschland</div>
       </div>
       <h1>Datenschutzerklärung</h1>
     </div>
@@ -177,7 +177,7 @@
     <h2>9. Änderungen dieser Erklärung</h2>
     <p>Wir passen diese Datenschutzerklärung an, sobald Änderungen an der App oder der Rechtslage dies erforderlich machen. Es gilt jeweils die hier veröffentlichte, aktuelle Fassung.</p>
 
-    <a class="pv-bottom-back" href="index.html">&larr; Zurück zur Startseite</a>
+    <a class="pv-bottom-back" href="../">&larr; Zurück zur Startseite</a>
 
   </div>
 </div>
@@ -185,16 +185,17 @@
 
 <footer class="rb-foot">
   <div class="rb-wrap rb-foot-row">
-    <a class="rb-brand" href="../" aria-label="RBApp Studio">
+    <a class="rb-brand" href="../../" aria-label="RBApp Studio">
       <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
     </a>
     <div class="rb-foot-meta">
-      <a href="privacy.html">Datenschutz</a> · <a href="../">Alle Apps</a><br>
+      <a href="./">Datenschutz</a> · <a href="../../">Alle Apps</a><br>
       <a href="mailto:rb.app.ios@gmail.com">Kontakt</a><br>
-      © 2026 Bußgeldkatalog · offline-first
+      © <span class="js-year">2026</span> Bußgeldkatalog · offline-first
     </div>
   </div>
 </footer>
 
+<script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </body>
 </html>

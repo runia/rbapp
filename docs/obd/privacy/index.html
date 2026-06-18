@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="OBD Connector Privacy Policy — local-first car diagnostics. No accounts, no analytics, no servers.">
+<meta name="theme-color" content="#ECEEEA">
+<title>Privacy Policy · OBD Connector</title>
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECEEEA; --paper-2:#E4E7E1; --card:#F7F8F5;
+    --ink:#14201B; --ink-soft:#2C342E; --graphite:#586059;
+    --line:#D3D8CF; --line-strong:#C3C9BE;
+    --signal:#FF5230;
+    --accent:#2563EB;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background-color:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; background-position:-1px -1px;
+    line-height:1.7; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden;
+  }
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(236,238,234,0) 0%,var(--paper) 70%)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  /* ============ Header ============ */
+  .rb-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .rb-head{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(236,238,234,.72);border-bottom:1px solid var(--line)}
+  .rb-head-row{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .rb-brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .rb-mark{width:30px;height:30px;border-radius:8px;background:var(--signal);display:grid;place-items:center;
+    color:#fff;font-family:"Space Mono",monospace;font-weight:700;font-size:12.5px;
+    box-shadow:0 4px 12px rgba(255,82,48,.32)}
+  .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.3px}
+  .rb-brand-sep{color:var(--line-strong);margin:0 7px;font-weight:400}
+  .rb-brand-app{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite)}
+  .rb-back{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--graphite);border:1px solid var(--line-strong);border-radius:100px;padding:8px 15px;transition:.18s}
+  .rb-back:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:520px){.rb-brand-app{display:none}}
+
+  /* ============ Reading column ============ */
+  .container{max-width:760px;margin:0 auto;padding:56px 24px 96px}
+
+  /* Privacy hero */
+  header{margin-bottom:48px}
+  .back-app{display:inline-flex;align-items:center;gap:8px;font-family:"Space Mono",monospace;font-size:12px;
+    letter-spacing:.6px;text-transform:uppercase;color:var(--graphite);margin-bottom:26px;transition:color .18s var(--ease)}
+  .back-app:hover{color:var(--ink)}
+  .brand{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:999px;
+    background:var(--card);border:1px solid var(--line);font-family:"Space Mono",monospace;
+    font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--graphite);margin-bottom:28px}
+  .brand-logo{width:22px;height:22px;border-radius:6px;object-fit:cover;display:block}
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(36px,6vw,52px);line-height:1.05;
+    letter-spacing:-.03em;font-weight:800;margin:0 0 16px}
+  .lede{font-size:19px;line-height:1.5;color:var(--graphite);margin:0 0 28px;max-width:56ch}
+  .dates{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Space Mono",monospace;font-size:12px;
+    letter-spacing:.4px;color:var(--graphite)}
+  .dates span strong{color:var(--ink);font-weight:700}
+
+  /* TL;DR / summary card */
+  .tldr{background:color-mix(in srgb,var(--accent) 7%,var(--card));
+    border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:40px 0 48px;position:relative}
+  .tldr-label{display:inline-flex;align-items:center;gap:6px;color:var(--accent);
+    font-family:"Space Mono",monospace;font-size:11.5px;font-weight:700;text-transform:uppercase;
+    letter-spacing:1px;margin-bottom:8px}
+  .tldr-label svg{width:14px;height:14px}
+  .tldr p{margin:0;font-size:17px;color:var(--ink-soft)}
+
+  /* Sections */
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(24px,3.4vw,30px);line-height:1.2;
+    letter-spacing:-.02em;font-weight:700;margin:56px 0 12px;padding-top:8px;position:relative}
+  h2::before{content:"";position:absolute;top:-2px;left:0;width:34px;height:3px;background:var(--accent);border-radius:2px}
+  h2 + p{margin-top:18px}
+  p{margin:0 0 16px}
+  ul{margin:0 0 20px;padding-left:0;list-style:none}
+  li{position:relative;padding-left:26px;margin-bottom:10px}
+  li::before{content:"";position:absolute;left:8px;top:13px;width:5px;height:5px;border-radius:50%;background:var(--graphite)}
+
+  .list-deny li{padding-left:26px}
+  .list-deny li::before{content:"✕";left:2px;top:0;width:auto;height:auto;border-radius:0;
+    background:none;color:var(--signal);font-weight:700;font-size:15px}
+  .list-allow li::before{content:"✓";background:none;color:var(--accent);font-weight:700;
+    left:0;top:0;width:auto;height:auto;border-radius:0;font-size:16px}
+
+  /* Permissions cards */
+  .perms{display:grid;gap:16px;margin:8px 0 20px}
+  .perm{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .perm-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--ink);
+    display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .perm-name .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+  .perm-desc{color:var(--graphite);font-size:15px;margin:0}
+
+  /* Inline code */
+  code{font-family:"Space Mono",ui-monospace,Menlo,monospace;background:var(--card);
+    border:1px solid var(--line);padding:2px 6px;border-radius:5px;font-size:0.88em}
+
+  /* Inline links in body */
+  .container p a,.container li a{color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+  .container p a:hover,.container li a:hover{border-bottom-color:var(--accent)}
+
+  /* Tables (if any) */
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:15px}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left;vertical-align:top}
+  thead th{background:var(--card);font-family:"Space Mono",monospace;font-size:11.5px;
+    letter-spacing:.6px;text-transform:uppercase;color:var(--graphite);font-weight:700}
+
+  /* Footer within reading column */
+  footer{margin-top:64px;padding-top:32px;border-top:1px solid var(--line);color:var(--graphite);font-size:15px}
+  .legal-note{color:var(--graphite);opacity:.9;font-size:13px;line-height:1.55;margin-top:0}
+  .rb-disclaimer{max-width:760px;margin:0 auto}
+
+  /* Shared RBApp footer */
+  .rb-foot{border-top:1px solid var(--line);background:var(--paper-2);padding:46px 0 54px;margin-top:0}
+  .rb-foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .rb-foot .rb-brand-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px}
+  .rb-foot-meta{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.4px;color:var(--graphite);text-align:right;line-height:1.9}
+  .rb-foot-meta a{color:var(--graphite)} .rb-foot-meta a:hover{color:var(--ink)}
+  @media(max-width:560px){.rb-foot-meta{text-align:left}}
+
+  /* a11y */
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  @media(max-width:600px){
+    .container{padding:36px 20px 64px}
+    .lede{font-size:17px}
+    body{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="rb-head">
+  <div class="rb-wrap rb-head-row">
+    <a class="rb-brand" href="../../" aria-label="RBApp studio">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">OBD CONNECTOR</span></span>
+    </a>
+    <a class="rb-back" href="../../">← All apps</a>
+  </div>
+</header>
+
+<div class="container">
+
+<header>
+  <a class="back-app" href="../">← Back to the app</a>
+  <div class="brand">
+    <img class="brand-logo" src="../icon.png" alt="">
+    <span>OBD Connector</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p class="lede">What data the app touches, where it lives, and what it never does.</p>
+</header>
+
+<div class="tldr">
+  <div class="tldr-label">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    Summary
+  </div>
+  <p>OBD Connector collects no personal data, ships no analytics, talks to no servers we operate. Everything happens on your device.</p>
+</div>
+
+<p>OBD Connector ("the app", "we") is published by Big Apps as a paid iOS application. This Privacy Policy explains what data the app touches, where it lives, and what it never does.</p>
+
+<h2>Data we do not collect</h2>
+<p>We do not collect, store, sell, share, or have access to:</p>
+<ul class="list-deny">
+  <li>Your name, email address, phone number, or any identifier</li>
+  <li>Your Apple ID, IDFA, or any advertising identifier</li>
+  <li>Crash logs (we have no crash reporting SDK)</li>
+  <li>Analytics or usage telemetry of any kind</li>
+  <li>Device fingerprints, IP addresses, or session identifiers</li>
+  <li>Your vehicle's VIN, license plate, odometer, or any other identifying information about your car</li>
+</ul>
+<p>There are no third-party SDKs that perform tracking. There is no signup. There is no account.</p>
+
+<h2>Data the app handles, on your device only</h2>
+<p>The app reads and stores the following data locally, in iOS's protected app sandbox:</p>
+<ul class="list-allow">
+  <li><strong>Vehicle profiles</strong> you create: nickname, make, model, year, optional VIN, engine details. Stored in your iPhone's local database (SwiftData).</li>
+  <li><strong>Diagnostic results</strong> read from your car: trouble codes (DTCs), freeze frame snapshots, readiness monitor status. Local-only.</li>
+  <li><strong>Trip recordings</strong>: GPS route polylines and OBD telemetry samples captured during a recording session. Local-only.</li>
+  <li><strong>Maintenance log entries</strong> you add: service dates, mileages, notes. Local-only.</li>
+</ul>
+<p>This data is included in your standard iCloud Backup (encrypted by Apple) only if you have iCloud Backup enabled at the OS level. We do not run our own cloud sync.</p>
+
+<h2>Permissions and why we ask</h2>
+<p>The app requests these iOS permissions. Granting them is optional; denying any of them disables the corresponding feature but does not break the app.</p>
+<div class="perms">
+  <div class="perm">
+    <div class="perm-name"><span class="dot"></span>Bluetooth</div>
+    <p class="perm-desc">Required to connect to a Bluetooth LE OBD-II adapter. The app communicates only with the adapter you pair with; no data is transmitted to any server.</p>
+  </div>
+  <div class="perm">
+    <div class="perm-name"><span class="dot"></span>Local Network</div>
+    <p class="perm-desc">Required to connect to a Wi-Fi OBD-II adapter on the same network as your iPhone (typically the adapter's own Wi-Fi access point). No internet traffic.</p>
+  </div>
+  <div class="perm">
+    <div class="perm-name"><span class="dot"></span>Location (While Using)</div>
+    <p class="perm-desc">Required only for the Trips feature to record your GPS route. Location data stays on the device; we do not upload, share, or sell it.</p>
+  </div>
+  <div class="perm">
+    <div class="perm-name"><span class="dot"></span>Notifications</div>
+    <p class="perm-desc">Required only to remind you about scheduled vehicle maintenance you added yourself.</p>
+  </div>
+</div>
+
+<h2>OBD-II adapter communication</h2>
+<p>When you connect to an ELM327-compatible adapter, the app exchanges standard OBD-II command/response strings (e.g. <code>0100</code>, <code>03</code>, <code>0902</code>) directly with the adapter over Bluetooth LE or Wi-Fi. The adapter then talks to your car's ECU. No part of this exchange involves any server controlled by us.</p>
+
+<h2>Children's privacy</h2>
+<p>OBD Connector is not directed at children. We do not knowingly collect any data from anyone, including children.</p>
+
+<h2>Third-party content shipped in the app</h2>
+<p>The bundled DTC reference content is derived from open-source automotive databases (Wal33D, python-OBD, mytrile, AOSP system_dtcs, yonoss/obdq). Their license attributions are included in the app. None of these third parties receive any data about you — the content is precompiled and shipped offline.</p>
+
+<h2>App Store transactions</h2>
+<p>Payment, refund, and download data is handled entirely by Apple under Apple's privacy policy. We never see your payment method, address, or billing information. Apple may share aggregated, non-personal sales statistics with us through App Store Connect; these statistics do not identify individual users.</p>
+
+<h2>International users</h2>
+<p>Because we collect no personal data, no international transfer of personal data occurs. GDPR (EU/EEA), UK GDPR, CCPA (California), LGPD (Brazil), and similar frameworks impose obligations on data controllers; in the absence of any controlled data, those obligations are satisfied by not collecting in the first place. If you believe a specific local law requires additional disclosure, contact the developer below.</p>
+
+<h2>Changes to this policy</h2>
+<p>If we ever change this policy, the new version will be posted here. We will not retroactively reduce the privacy protections described above.</p>
+
+<footer>
+  <p class="legal-note rb-disclaimer">This policy is the binding statement on our data practices. It supersedes any other statement in the app or its marketing materials.</p>
+</footer>
+
+</div>
+
+<footer class="rb-foot">
+  <div class="rb-wrap rb-foot-row">
+    <a class="rb-brand" href="../../" aria-label="RBApp studio">
+      <span class="rb-mark">RB</span>
+      <span class="rb-brand-name">RBApp</span>
+    </a>
+    <div class="rb-foot-meta">
+      <a href="./">Privacy policy</a> · <a href="../../">All apps</a><br>
+      <a href="mailto:rb.app.ios@gmail.com">Contact</a><br>
+      © <span class="js-year">2026</span> OBD Connector · offline-first
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
+</body>
+</html>

@@ -343,7 +343,7 @@
             <p class="app-desc">Turns voice and video into clean text — transcription, AI summaries, speaker labels and subtitles, all on your iPhone and iPad.</p>
             <div class="app-links">
               <a class="app-open" href="recapio/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="recapio/privacy.html">Privacy</a>
+              <a class="app-priv" href="recapio/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -359,7 +359,7 @@
             <p class="app-desc">Find the original (OEM) part for almost any car by VIN or model, in clear exploded diagrams — with part numbers, analogs and fitment. 40+ brands.</p>
             <div class="app-links">
               <a class="app-open" href="carparts/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="carparts/privacy.html">Privacy</a>
+              <a class="app-priv" href="carparts/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -375,7 +375,7 @@
             <p class="app-desc">Local-first OBD-II car diagnostics for iPhone. A live dashboard, fault codes and trip logs — with no account, no analytics, no servers.</p>
             <div class="app-links">
               <a class="app-open" href="obd/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="obd/privacy.html">Privacy</a>
+              <a class="app-priv" href="obd/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -391,7 +391,7 @@
             <p class="app-desc">U.S. traffic laws, MUTCD road signs, fines, DUI rules and a DMV practice test — organized by state. Works offline, no account.</p>
             <div class="app-links">
               <a class="app-open" href="traffic-dmv/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="traffic-dmv/privacy.html">Privacy</a>
+              <a class="app-priv" href="traffic-dmv/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -407,7 +407,7 @@
             <p class="app-desc">Germany's traffic-fine catalog, the StVO, road signs and points in Flensburg — searchable and completely offline.</p>
             <div class="app-links">
               <a class="app-open" href="bussgeldkatalog/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="bussgeldkatalog/privacy.html">Privacy</a>
+              <a class="app-priv" href="bussgeldkatalog/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -423,7 +423,7 @@
             <p class="app-desc">A field reference for Russian traffic officers — code articles with ready-made wording, fines, road signs and the full rules of the road. Fully offline.</p>
             <div class="app-links">
               <a class="app-open" href="pamyatka-gibdd/">Open <span class="arr" aria-hidden="true">↗</span></a>
-              <a class="app-priv" href="pamyatka-gibdd/privacy.html">Privacy</a>
+              <a class="app-priv" href="pamyatka-gibdd/privacy/">Privacy</a>
             </div>
           </div>
         </article>
@@ -492,7 +492,7 @@
     <div class="foot-meta">
       Independent iOS studio · made for iPhone &amp; iPad<br>
       <a href="mailto:rb.app.ios@gmail.com">Contact us</a><br>
-      © 2026 RBApp · private by design
+      © <span class="js-year">2026</span> RBApp · private by design
     </div>
   </div>
 </footer>
@@ -531,5 +531,6 @@
     els.forEach(function(e,i){ e.style.transitionDelay = Math.min(i%6*60,300)+'ms'; io.observe(e); });
   })();
 </script>
+<script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </body>
 </html>

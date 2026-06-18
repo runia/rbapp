@@ -6,7 +6,7 @@
 <title>Политика конфиденциальности — Памятка ГИБДД</title>
 <meta name="description" content="Политика конфиденциальности приложения «Памятка ГИБДД». Приложение не собирает и не передаёт персональные данные пользователей.">
 <meta name="theme-color" content="#14201B">
-<link rel="icon" type="image/png" href="icon.png">
+<link rel="icon" type="image/png" href="../icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -72,7 +72,6 @@
   .rb-col{max-width:760px;margin:0 auto;padding:0 24px}
   @media(max-width:560px){.rb-col{padding:0 20px}}
   .rb-doc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,4vw,40px)}
-  .rb-updated{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.4px;color:var(--graphite);margin-bottom:24px}
   .rb-doc h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em;
     line-height:1.15;margin:30px 0 10px;display:flex;align-items:baseline;gap:10px}
   .rb-doc h2::before{content:"";flex:0 0 auto;width:18px;height:3px;border-radius:2px;background:var(--accent);transform:translateY(-4px)}
@@ -104,28 +103,27 @@
 
 <header class="rb-head">
   <div class="rb-wrap rb-head-row">
-    <a class="rb-brand" href="../">
+    <a class="rb-brand" href="../../">
       <span class="rb-mark">RB</span>
       <span class="rb-brand-name">RBApp<span class="rb-brand-sep">/</span><span class="rb-brand-app">ПАМЯТКА ГИБДД</span></span>
     </a>
-    <a class="rb-back" href="../">← Все приложения</a>
+    <a class="rb-back" href="../../">← Все приложения</a>
   </div>
 </header>
 
 <header class="rb-prv-hero">
   <div class="rb-col">
-    <img src="icon.png" alt="Памятка ГИБДД">
+    <img src="../icon.png" alt="Памятка ГИБДД">
     <span class="rb-eyebrow">TRAFFIC LAW · RU</span>
     <h1>Политика конфиденциальности</h1>
     <p class="lede">Приложение «Памятка ГИБДД»</p>
-    <a class="rb-prv-back" href="index.html">← Назад к приложению</a>
+    <a class="rb-prv-back" href="../">← Назад к приложению</a>
   </div>
 </header>
 
 <main>
   <div class="rb-col">
     <div class="rb-doc">
-      <p class="rb-updated">Дата последнего обновления: 10 июня 2026 г.</p>
 
       <div class="rb-highlight">
         Приложение «Памятка ГИБДД» не собирает, не хранит и не передаёт персональные данные пользователей. Все материалы хранятся на устройстве и доступны без подключения к интернету.
@@ -164,28 +162,29 @@
       <p>Приложение не предназначено для сбора данных несовершеннолетних и в принципе не собирает персональные данные.</p>
 
       <h2>9. Изменения в Политике</h2>
-      <p>Мы можем периодически обновлять настоящую Политику конфиденциальности. Актуальная версия всегда доступна на этой странице с указанием даты последнего обновления.</p>
+      <p>Мы можем периодически обновлять настоящую Политику конфиденциальности. Актуальная версия всегда доступна на этой странице.</p>
 
       <h2>10. Отказ от ответственности</h2>
       <p>Приложение носит справочно-информационный характер и не является официальным изданием нормативных правовых актов. Перед принятием юридически значимых решений необходимо сверяться с официальными источниками.</p>
 
-      <a class="rb-back-app" href="index.html">← Вернуться на главную</a>
+      <a class="rb-back-app" href="../">← Вернуться на главную</a>
     </div>
   </div>
 </main>
 
 <footer class="rb-foot">
   <div class="rb-wrap rb-foot-row">
-    <a class="rb-brand" href="../">
+    <a class="rb-brand" href="../../">
       <span class="rb-mark">RB</span><span class="rb-brand-name">RBApp</span>
     </a>
     <div class="rb-foot-meta">
-      <a href="privacy.html">Политика конфиденциальности</a> · <a href="../">Все приложения</a><br>
+      <a href="./">Политика конфиденциальности</a> · <a href="../../">Все приложения</a><br>
       <a href="mailto:rb.app.ios@gmail.com">Написать нам</a><br>
-      © 2026 RBApp · offline-first
+      © <span class="js-year">2026</span> RBApp · offline-first
     </div>
   </div>
 </footer>
 
+<script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </body>
 </html>
