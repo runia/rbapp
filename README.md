@@ -11,12 +11,13 @@ folder via GitHub Pages and lives at **rbstack.com**. Each app has its own subfo
 
 | # | App | Path | Privacy URL |
 |---|-----|------|-------------|
-| RB-01 | Recapio | [`docs/recapio/`](docs/recapio/) | rbstack.com/recapio/privacy.html |
-| RB-02 | Car Parts | [`docs/carparts/`](docs/carparts/) | rbstack.com/carparts/privacy.html |
-| RB-03 | OBD Connector | [`docs/obd/`](docs/obd/) | rbstack.com/obd/privacy.html |
-| RB-04 | Traffic & DMV | [`docs/traffic-dmv/`](docs/traffic-dmv/) | rbstack.com/traffic-dmv/privacy.html |
-| RB-05 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbstack.com/bussgeldkatalog/privacy.html |
-| RB-06 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbstack.com/pamyatka-gibdd/privacy.html |
+| RB-01 | Recapio | [`docs/recapio/`](docs/recapio/) | rbstack.com/recapio/privacy/ |
+| RB-02 | Car Parts | [`docs/carparts/`](docs/carparts/) | rbstack.com/carparts/privacy/ |
+| RB-03 | OBD Connector | [`docs/obd/`](docs/obd/) | rbstack.com/obd/privacy/ |
+| RB-04 | Traffic & DMV | [`docs/traffic-dmv/`](docs/traffic-dmv/) | rbstack.com/traffic-dmv/privacy/ |
+| RB-05 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbstack.com/bussgeldkatalog/privacy/ |
+| RB-06 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbstack.com/pamyatka-gibdd/privacy/ |
+| RB-07 | Highway Code & Theory Prep | [`docs/highway-code/`](docs/highway-code/) | rbstack.com/highway-code/privacy/ |
 
 > When the old per-app repos are removed, update each app's **App Store privacy-policy URL**
 > to the matching `rbstack.com/<app>/privacy.html` above.
