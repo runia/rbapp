@@ -49,6 +49,12 @@
   <priority>0.9</priority>
  </url>
  <url>
+  <loc>https://rbstack.com/police-powers/</loc>
+  <lastmod>2026-07-09</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+ </url>
+ <url>
   <loc>https://rbstack.com/recapio/privacy/</loc>
   <lastmod>2026-07-09</lastmod>
   <changefreq>monthly</changefreq>
@@ -86,6 +92,12 @@
  </url>
  <url>
   <loc>https://rbstack.com/highway-code/privacy/</loc>
+  <lastmod>2026-07-09</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://rbstack.com/police-powers/privacy/</loc>
   <lastmod>2026-07-09</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>

@@ -18,6 +18,7 @@ folder via GitHub Pages and lives at **rbstack.com**. Each app has its own subfo
 | RB-05 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbstack.com/bussgeldkatalog/privacy/ |
 | RB-06 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbstack.com/pamyatka-gibdd/privacy/ |
 | RB-07 | Highway Code & Theory Prep | [`docs/highway-code/`](docs/highway-code/) | rbstack.com/highway-code/privacy/ |
+| RB-08 | Police Powers & Offences UK | [`docs/police-powers/`](docs/police-powers/) | rbstack.com/police-powers/privacy/ |
 
 > When the old per-app repos are removed, update each app's **App Store privacy-policy URL**
 > to the matching `rbstack.com/<app>/privacy.html` above.
