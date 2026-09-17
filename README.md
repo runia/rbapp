@@ -16,7 +16,7 @@ folder via GitHub Pages and lives at **rbstack.com**. Each app has its own subfo
 | RB-03 | OBD Connector | [`docs/obd/`](docs/obd/) | rbstack.com/obd/privacy/ |
 | RB-04 | Traffic & DMV | [`docs/traffic-dmv/`](docs/traffic-dmv/) | rbstack.com/traffic-dmv/privacy/ |
 | RB-05 | Bußgeldkatalog | [`docs/bussgeldkatalog/`](docs/bussgeldkatalog/) | rbstack.com/bussgeldkatalog/privacy/ |
-| RB-06 | Памятка ГИБДД | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbstack.com/pamyatka-gibdd/privacy/ |
+| RB-06 | Инспектор ДПС | [`docs/pamyatka-gibdd/`](docs/pamyatka-gibdd/) | rbstack.com/pamyatka-gibdd/privacy/ |
 | RB-07 | Highway Code & Theory Prep | [`docs/highway-code/`](docs/highway-code/) | rbstack.com/highway-code/privacy/ |
 | RB-08 | Police Powers & Offences UK | [`docs/police-powers/`](docs/police-powers/) | rbstack.com/police-powers/privacy/ |
 | RB-09 | Police USA — Field Guide | [`docs/police-usa/`](docs/police-usa/) | rbstack.com/police-usa/privacy/ |
